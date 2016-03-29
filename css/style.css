@@ -1,0 +1,26 @@
+#top-bar {
+	background-color: #CC6666;
+}
+#title {
+	text-align:center;
+	font-size: 18px;
+	margin:0 !important;
+	color:white;
+}
+
+.page-header {
+	margin-top:20px;
+	margin-bottom:10px;
+	border-bottom:0px !important;
+}
+#nav-item{
+	color:#CC6666;
+	text-align: center;
+	border-bottom: 2px;
+	border-bottom-color: #CC6666;
+}
+
+#newsfeed-nav {
+	border-bottom:1px;
+	border-bottom-color: #CC6666;
+}
