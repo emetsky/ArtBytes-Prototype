@@ -1,3 +1,12 @@
+body {
+	padding-bottom:50px !important;
+}
+
+.container-fluid {
+	padding-left: 0px;
+	padding-right:0px;
+}
+
 #top-bar {
 	background-color: #CC6666;
 }
@@ -23,4 +32,34 @@
 #newsfeed-nav {
 	border-bottom:1px;
 	border-bottom-color: #CC6666;
+}
+
+#menu-item {
+	text-align: center;
+}
+
+#menu-item-current a {
+	text-decoration: underline;
+
+}
+
+#selected {
+	background:#CC6666;
+	height:5px;
+	float:center;
+	margin-top:4px;
+	width:80px;
+	margin-left:-55px;
+	margin-bottom: 0px;
+
+}
+
+#menu-bottom {
+	background:#CC6666;
+	height:1px;
+	margin-top: -1px;
+}
+
+#bottom-nav {
+	
 }
