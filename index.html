@@ -106,10 +106,46 @@
           <div class="navbar-header">
             <div class = "col-xs-2"></div>
             <div class = "col-xs-3">
-              <a class="navbar-brand" href="#" style = "color:#CC6666;"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+              <a class="navbar-brand" href="#" style = "color:#CC6666;" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      ...
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class = "col-xs-3">
-              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+              <a class="navbar-brand" href="#" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Create</h4>
+                      </div>
+                      <div class="modal-body">
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <input id="myFileInput" type="file" accept="image/*;capture=camera">
+                            <script>
+                            var myInput = document.getElementById('myFileInput');
+                            function sendPic() {
+                                var file = myInput.files[0];
+                            }
+                            myInput.addEventListener('change', sendPic, false);
+                            </script>
+                          </li>
+                          <li class="list-group-item"><a>Exhibition</a></li>
+
+                        </ul>
+                      </div>
+                      <div class="modal-footer" style = "text-align:left">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class = "col-xs-3">
               <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
@@ -120,7 +156,6 @@
         </div>
       </div>
     </nav>
-
 
 
  
