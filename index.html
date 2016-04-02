@@ -126,17 +126,27 @@
                       </div>
                       <div class="modal-body">
                         <ul class="list-group">
-                          <li class="list-group-item">
-                            <input id="myFileInput" type="file" accept="image/*;capture=camera">
+                          <li class="list-group-item"><a href = "crop-image">ArtByte</p>
+                            <div class="btn btn-medium" id = "hidden-btn">
+                             <span class="btn btn-default btn-file">
+                                <div class="btn-image fa fa-5x fa-camera-retro"> 
+                                  <input type="file" id="myFileInput" accept="image/*" capture="camera" id = "hidden-input" onClick = "takeImage()">
+                                </div>
+                              </span>
+                            </div>
                             <script>
-                            var myInput = document.getElementById('myFileInput');
-                            function sendPic() {
+                            function takeImage () {
+                              var myInput = document.getElementById('myFileInput');
+                              function sendPic() {
                                 var file = myInput.files[0];
+                              }
+                             // myInput.addEventListener('change', sendPic, false);
+                              window.location.href = 'crop-image';
                             }
-                            myInput.addEventListener('change', sendPic, false);
+                            
                             </script>
                           </li>
-                          <li class="list-group-item"><a>Exhibition</a></li>
+                          <li class="list-group-item"><a href = "crop-image">Exhibition</a></li>
 
                         </ul>
                       </div>
