@@ -8,37 +8,73 @@
     <title>ArtBytes-Prototype</title>
 
     <!-- Bootstrap -->
- <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/style.css" rel="stylesheet">
-    <script src = "js/myscripts.js"></script>
+ <link href="../css/bootstrap.min.css" rel="stylesheet">
+   <link href="../css/style.css" rel="stylesheet">
+    <script src = "../js/myscripts.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
   </head>
-  <body>
+  <body onLoad = "$('#header-margin').hide()">
   <div class = "full-page">
     <!--HEADER-->
     <div class = "container-fluid">
       <div class = "row" id = "top-bar">
         <div class = "col-xs-12">
-          <div class="page-header"><h1 id = "title">ARTBYTES</h1></div>
+          <div class="page-header"><h1 id = "title">Your ARTBYTES</h1></div>
         </div>
       </div>
 
-      <div class = "row" style = "height:20px"></div>
+      <div class = "row" style = "height:20px" id = "header-margin"></div>
     </div>
+
+    <!--successfully saved the new artbyte-->
+    <div class = "container-fluid">
+      <div class="alert alert-success" role="alert" id = "alert1">
+
+        <div class = "row">
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-10">
+            <strong>Your ArtByte has been saved!</strong>
+          </div>
+          <div class = "col-xs-1"></div>
+          </div>
+
+        <div class = "row">
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-10">
+            <button type="button" class="btn btn-default">
+              Make Exhibition
+            </button>
+          </div>
+          <div class = "col-xs-1"></div>
+        </div>
+
+        <div class = "row">
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-10">
+            <button type="button" class="btn btn-default" data-dismiss="alert" aria-label="Close" onclick="$('#alert1').hide(); $('#header-margin').show()">
+              Dismiss
+            </button>
+          </div>
+          <div class = "col-xs-1"></div>
+        </div>
+      </div>
+    </div>
+
       <!--Newsfeed Navigation-->
     <div class = "container-fluid">
       <div class = "row" id = "newsfeed-nav">
-        <div class = "col-xs-2"></div>
           <ul class="nav nav-tabs nav-justified">
             <div class = "col-xs-4" id = "menu-item">
-              <li role="presentation" class="active"><a href="#" id = "nav-item">FOLLOWING</a></li>
+              <li role="presentation" class="active"><a href="#" id = "nav-item">ARTBYTES</a></li>
             </div>
             <div class = "col-xs-4" id = "menu-item">
-              <li role="presentation"><a href="#" id = "nav-item">DISCOVER</a></li>
+              <li role="presentation"><a href="#" id = "nav-item">MEGABYTES</a></li>
+            </div>
+            <div class = "col-xs-4" id = "menu-item">
+              <li role="presentation"><a href="#" id = "nav-item">EXHIBITIONS</a></li>
             </div>
           </ul>
-          <div class = "col-xs-2"></div>
           <!--new line-->
           <div class = "col-xs-2"></div>
           <div class = "col-xs-4">
@@ -50,56 +86,36 @@
       </div>
     </div>
 
-      <!--Begin Newsfeed items-->
+      <!--existing gallery of artbytes-->
     <div class = "container-fluid">
+
       <div class = "row">
-        <div class = "col-xs-1"></div>
-          <div class = "col-xs-11">
-            <h5>sanjana</h5>
-          </div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
         </div>
-        <div class = "row">
-          <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <img src = "images/newsfeed-image.png" style = "width:100%"></img>
-          </div>
-          <div class = "col-xs-1"></div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
         </div>
-        
-        <div class = "row">
-          <div class = "col-xs-1"></div>
-          <div class = "col-xs-11">
-            <p>@ Carnegie Mellon Museum of Art <br>rjue saved this<br>evan.metsky saved this</p>
-          </div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
         </div>
+      </div>
+
+      <div class = "row">
+        <div class = "col-xs-4">
+          <img src = "#"></img>
+        </div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
+        </div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
+        </div>
+      </div>
 
 
     </div>
 
-    <div class = "container-fluid">
-      <div class = "row">
-        <div class = "col-xs-1"></div>
-          <div class = "col-xs-11">
-            <h5>evan.metsky</h5>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <img src = "images/newsfeed-image2.jpg" style = "width:100%"></img>
-          </div>
-          <div class = "col-xs-1"></div>
-        </div>
-        
-        <div class = "row">
-          <div class = "col-xs-1"></div>
-          <div class = "col-xs-11">
-            <p>@ Carnegie Natural History Museum <br>minakim saved this</p>
-          </div>
-        </div>
-
-
-    </div>
 
     <nav class="navbar navbar-default navbar-fixed-bottom" id = "bottom-nav">
       <div class="container-fluid">

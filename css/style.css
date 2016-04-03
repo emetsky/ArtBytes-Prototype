@@ -1,11 +1,22 @@
 body {
+	margin: 0 !important;
+	padding:0 !important;
+	max-width:100% !important;
+	height:100%;
 	padding-bottom:50px !important;
+
+}
+
+
+.full-page {
+		overflow-x: hidden !important;
 }
 
 .container-fluid {
 	padding-left: 0px;
 	padding-right:0px;
 }
+
 
 #top-bar {
 	background-color: #CC6666;
@@ -21,7 +32,12 @@ body {
 	margin-top:20px;
 	margin-bottom:10px;
 	border-bottom:0px !important;
+	padding-bottom:0px;
 }
+.page-header p {
+	color:white;
+}
+
 #nav-item{
 	color:#CC6666;
 	text-align: center;
