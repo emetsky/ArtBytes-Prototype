@@ -4,28 +4,18 @@ body {
 	max-width:100% !important;
 	height:100%;
 	padding-bottom:50px !important;
+}
 
+/*** Classes ***/
+
+.container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 
 .full-page {
 		overflow-x: hidden !important;
-}
-
-.container-fluid {
-	padding-left: 0px;
-	padding-right:0px;
-}
-
-
-#top-bar {
-	background-color: #CC6666;
-}
-#title {
-	text-align:center;
-	font-size: 18px;
-	margin:0 !important;
-	color:white;
 }
 
 .page-header {
@@ -34,8 +24,37 @@ body {
 	border-bottom:0px !important;
 	padding-bottom:0px;
 }
+
 .page-header p {
 	color:white;
+}
+
+/*** IDs ***/
+
+#hidden-btn {
+	padding:0;
+	opacity: 0;
+
+}
+
+#hidden-input {
+	padding:0px;
+	margin-top:-30px;
+}
+
+#menu-bottom {
+	background:#CC6666;
+	height:1px;
+	margin-top: -1px;
+}
+
+#menu-item {
+	text-align: center;
+}
+
+#menu-item-current a {
+	text-decoration: underline;
+
 }
 
 #nav-item{
@@ -50,15 +69,6 @@ body {
 	border-bottom-color: #CC6666;
 }
 
-#menu-item {
-	text-align: center;
-}
-
-#menu-item-current a {
-	text-decoration: underline;
-
-}
-
 #selected {
 	background:#CC6666;
 	height:5px;
@@ -67,26 +77,18 @@ body {
 	width:80px;
 	margin-left:-55px;
 	margin-bottom: 0px;
-
 }
 
-#menu-bottom {
-	background:#CC6666;
-	height:1px;
-	margin-top: -1px;
+#title {
+	text-align:center;
+	font-size: 18px;
+	margin:0 !important;
+	color:white;
 }
 
-#bottom-nav {
-	
+#top-bar {
+	background-color: #CC6666;
 }
 
-#hidden-btn {
-	padding:0;
-	opacity: 0;
 
-}
 
-#hidden-input {
-	padding:0px;
-	margin-top:-30px;
-}
