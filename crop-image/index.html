@@ -35,7 +35,7 @@
         </div>
         <div class = "col-xs-2">
           <div class="page-header">
-            <button class = "btn btn-default" id = "generate">Next</button>
+            <button id = "generate">Next</button>
           </div>
         </div>
         <div class = "col-xs-1"></div>
@@ -120,7 +120,7 @@ function touchHandler(event) {
         //coords.innerHTML = 'x: ' + event.touches[0].pageX + 'y: ' + event.touches[0].pageY;
         //coordStr += " " + event.touches[0].pageX + "," + event.touches[0].pageY; 
         //console.log(coordStr);
-      addClick(event.touches[0].pageX, event.touches[0].pageY - 50); 
+      addClick(event.touches[0].pageX, event.touches[0].pageY - 60); 
       redraw(); 
   } 
   function init() {
@@ -152,6 +152,7 @@ function touchHandler(event) {
 
       polyClip.init(); 
       localStorage["myKey"] = JSON.stringify($("#get-this").html());
+      console.log(localStorage["myKey"]);
       window.location.href = "../image-cropped";
   });
 
