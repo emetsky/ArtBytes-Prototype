@@ -18,11 +18,21 @@ body {
 		overflow-x: hidden !important;
 }
 
+#get-image {
+	position:fixed;
+	left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    text-align: center;
+}
+
 .page-header {
 	margin-top:20px;
 	margin-bottom:10px;
 	border-bottom:0px !important;
 	padding-bottom:0px;
+
 }
 
 .page-header p {
@@ -30,6 +40,12 @@ body {
 }
 
 /*** IDs ***/
+
+#canvas-1 {
+	width:105%;
+	height:100%;
+	
+}
 
 #hidden-btn {
 	padding:0;
@@ -40,6 +56,11 @@ body {
 #hidden-input {
 	padding:0px;
 	margin-top:-30px;
+}
+
+#canvasDiv {
+	max-width: 99%;
+    max-height: 99%;
 }
 
 #menu-bottom {

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>ArtBytes-Prototype</title>
 
@@ -133,28 +134,10 @@
                       </div>
                       <div class="modal-body">
                         <ul class="list-group">
-                          <li class="list-group-item"><a href = "crop-image">ArtByte</p>
-                            <div class="btn btn-medium" id = "hidden-btn">
-                             <span class="btn btn-default btn-file">
-                                <div class="btn-image fa fa-5x fa-camera-retro"> 
-                                  <input type="file" id="myFileInput" accept="image/*" capture="camera" id = "hidden-input" onClick = "takeImage()">
-                                </div>
-                              </span>
-                            </div>
-                            <script>
-                            function takeImage () {
-                              var myInput = document.getElementById('myFileInput');
-                              function sendPic() {
-                                var file = myInput.files[0];
-                              }
-                             // myInput.addEventListener('change', sendPic, false);
-                              window.location.href = 'crop-image';
-                            }
-                            
-                            </script>
+                          <li class="list-group-item"><!--<a href = "crop-image">ArtByte</a>-->
+                            <input id="myFileInput" type="file" accept="image/*" capture="camera">
                           </li>
                           <li class="list-group-item"><a href = "crop-image">Exhibition</a></li>
-
                         </ul>
                       </div>
                       <div class="modal-footer" style = "text-align:left">
@@ -176,8 +159,25 @@
     <!-- End of Bottom Nav -->
 
   </div>
-            
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+          <script>
+          //Script to read an image taken from phone's camera
+          $('#myFileInput').change(function() {
+          const file = document.getElementById('myFileInput').files[0]
+
+          var img = document.createElement("img");
+          img.classList.add("obj");
+          img.file = file;
+          img.id = "genimg"
+         
+          
+          
+          var reader = new FileReader();
+          reader.onload = (function(aImg) { return function(e) { localStorage.image = e.target.result; window.location.href = "crop-image"; }; })(img);
+          reader.readAsDataURL(file);
+          });
+          </script>  
+   
     <script src="js/bootstrap.min.js"></script>
+    <script src = "js/cropping.js"></script>
   </body>
 </html>

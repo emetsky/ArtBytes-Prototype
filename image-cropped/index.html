@@ -12,6 +12,8 @@
    <link href="../css/style.css" rel="stylesheet">
     <script src = "../js/myscripts.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+    <script src = "../js/polyclip-p.js"></script>
 
   </head>
   <body>
@@ -44,7 +46,8 @@
     <div class = "container-fluid">
       <div class = "col-xs-1"></div>
       <div class = "col-xs-10">
-        <img src = "#" style = "width:100%"></img>
+         <div id ="cropped_image" style="float:left;"> 
+        </div> 
       </div>
       <div class = "col-xs-1"></div>
     </div>
@@ -67,11 +70,14 @@
     </div>
 
     </div>
-
+    <script>
+    var contentsOfOldDiv = JSON.parse(localStorage["myKey"]);   
+    $("#cropped_image").html(contentsOfOldDiv);
+    </script>
 
  
             
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-    <script src="js/bootstrap.min.js"></script>
+   
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
