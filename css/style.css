@@ -13,6 +13,9 @@ body {
 	padding-right: 0px;
 }
 
+#cropped_image {
+	width:100%;
+}
 
 .full-page {
 		overflow-x: hidden !important;
@@ -78,17 +81,24 @@ body {
 
 }
 
+#myimg {
+	width:100%;
+}
+
 #nav-item{
 	color:#CC6666;
 	text-align: center;
 	border-bottom: 2px;
 	border-bottom-color: #CC6666;
 }
-
+#new-artbyte {
+	width:100%;
+}
 #newsfeed-nav {
 	border-bottom:1px;
 	border-bottom-color: #CC6666;
 }
+
 
 #selected {
 	background:#CC6666;

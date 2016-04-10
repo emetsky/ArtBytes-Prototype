@@ -12,17 +12,22 @@
  <link href="css/bootstrap.min.css" rel="stylesheet">
    <link href="css/style.css" rel="stylesheet">
     <script src = "js/myscripts.js"></script>
+    <script src = "js/javascript.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
   </head>
 
-  <body>
-  <div class = "full-page">
+  <body onload = "init ()">
+
+  <!--NEWSFEED/HOMEPAGE-->
+  <div class = "full-page" id = "newsfeed">
     <!-- Beginning of Header -->
     <div class = "container-fluid">
       <div class = "row" id = "top-bar">
         <div class = "col-xs-12">
-          <div class="page-header"><h1 id = "title">ARTBYTES</h1></div>
+          <div class = "page-header">
+            <h1 id = "title">ARTBYTES</h1>
+          </div>
         </div>
       </div>
 
@@ -114,18 +119,11 @@
           <div class="navbar-header">
             <div class = "col-xs-2"></div>
             <div class = "col-xs-3">
-              <a class="navbar-brand" href="#" style = "color:#CC6666;" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      ...
-                    </div>
-                  </div>
-                </div>
+              <a class="navbar-brand" href="#" style = "color:#CC6666;"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             </div>
             <div class = "col-xs-3">
               <a class="navbar-brand" href="#" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal fade bs-example-modal-sm" id = "modal-popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                   <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -134,7 +132,7 @@
                       </div>
                       <div class="modal-body">
                         <ul class="list-group">
-                          <li class="list-group-item"><!--<a href = "crop-image">ArtByte</a>-->
+                          <li class="list-group-item">
                             <input id="myFileInput" type="file" accept="image/*" capture="camera">
                           </li>
                           <li class="list-group-item"><a href = "crop-image">Exhibition</a></li>
@@ -149,33 +147,352 @@
             </div>
             <div class = "col-xs-3">
               <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-            </div>
-
-       
-          
+            </div>          
         </div>
       </div>
     </nav>
     <!-- End of Bottom Nav -->
+  </div>
+
+  <!--BEGIN CROPPING PAGE-->
+
+  <div class = "full-page" id = "crop-image">
+    <!--HEADER-->
+    <div class = "container-fluid">
+      <div class = "row" id = "top-bar">
+        <div class = "col-xs-1"></div>
+         <div class="col-xs-2">
+          <div class="page-header">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" id = "to-newsfeed" style = "color:white"></span>
+          </div>
+        </div>
+        <div class = "col-xs-6">
+          <div class="page-header">
+            <h1 id = "title">Crop Image</h1>
+          </div>
+        </div>
+        <div class = "col-xs-2">
+          <div class="page-header">
+            <button id = "generate">Next</button>
+          </div>
+        </div>
+        <div class = "col-xs-1"></div>
+            
+      </div>
+    </div>
+
+    <!--image cropping area-->
+    <div class = "container-fluid" id = "get-image">
+      <img src = "" id = "myimg" />
+    </div>
+  </div>
+
+<!--CROPPED IMAGE CANVAS-->
+<div class = "full-page" id = "image-cropped">
+    <!--HEADER-->
+    <div class = "container-fluid">
+      <div class = "row" id = "top-bar">
+        <div class = "col-xs-1"></div>
+         <div class="col-xs-2">
+          <div class="page-header">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" id = "to-cropImage" style = "color:white"></span>
+          </div>
+        </div>
+        <div class = "col-xs-6">
+          <div class="page-header">
+            <h1 id = "title">Untitled-03</h1>
+          </div>
+        </div>
+        <div class = "col-xs-2">
+          <div class="page-header">
+            <p id = "to-gallery">Save</p>
+          </div>
+        </div>
+        <div class = "col-xs-1"></div>
+            
+      </div>
+    </div>
+
+    <!--cropped image preview area-->
+    <div class = "container-fluid">
+      <div class = "col-xs-1"></div>
+      <div class = "col-xs-10">
+         <div style="float:left;"> 
+            <img src = "" id = "cropped_image" />
+        </div> 
+      </div>
+      <div class = "col-xs-1"></div>
+    </div>
+
+    <!--buttons for edit info and add another image-->
+    <div class = "container-fluid">
+      <div class = "col-xs-1"></div>
+      <div class = "col-xs-4">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" id = "to-edit" aria-expanded="false">EDIT INFO</button>
+        </div>
+      </div>
+     <div class = "col-xs-2"></div>
+      <div class = "col-xs-4">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default" aria-expanded="false"><a href = "#">ADD</a></button>
+        </div>
+      </div>
+      <div class = "col-xs-1"></div>
+    </div>
+  </div>
+
+<!--EDIT CROPPED IMAGE INFO-->
+  <div class = "full-page" id = "edit-info">
+    <!--HEADER-->
+    <div class = "container-fluid">
+      <div class = "row" id = "top-bar">
+        <div class = "col-xs-1"></div>
+         <div class="col-xs-2">
+          <div class="page-header">
+            <a href = "../image-cropped"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style = "color:white"></span></a>
+          </div>
+        </div>
+        <div class = "col-xs-6">
+          <div class="page-header">
+            <h1 id = "title">Edit Image Info</h1>
+          </div>
+        </div>
+        <div class = "col-xs-2">
+          <div class="page-header">
+            <a href = "../image-cropped"><p>Done</p></a>
+          </div>
+        </div>
+        <div class = "col-xs-1"></div>
+            
+      </div>
+    </div>
+
+    <!--cropped image preview area-->
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-xs-1"></div>
+        <div class = "col-xs-10">
+          <img src = "#" style = "width:100%"></img>
+        </div>
+        <div class = "col-xs-1"></div>
+      </div>
+    </div>
+
+    <!--area to enter image info-->
+    <div class = "container-fluid">
+      <!--line & text-input-->
+      <div class = "row">
+        <div class = "col-xs-12">
+          <hr>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-xs-1"></div>
+          <div class = "col-xs-10">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Title</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        <div class = "col-xs-1"></div>
+      </div>
+      <!--line & text-input-->
+      <div class = "row">
+        <div class = "col-xs-12">
+          <hr>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-xs-1"></div>
+          <div class = "col-xs-10">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Location</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        <div class = "col-xs-1"></div>
+      </div>
+      <!--line & text-input-->
+      <div class = "row">
+        <div class = "col-xs-12">
+          <hr>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-xs-1"></div>
+          <div class = "col-xs-10">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Artist</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        <div class = "col-xs-1"></div>
+      </div>
+      <!--line & text-input-->
+      <div class = "row">
+        <div class = "col-xs-12">
+          <hr>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-xs-1"></div>
+          <div class = "col-xs-10">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Artwork</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        <div class = "col-xs-1"></div>
+      </div>
+      <!--line & text-input-->
+      <div class = "row">
+        <div class = "col-xs-12">
+          <hr>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-xs-1"></div>
+          <div class = "col-xs-10">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">Notes</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        <div class = "col-xs-1"></div>
+      </div>
+    </div>
+  </div>
+
+<!--GALLERY OF ARTBYTES-->
+  <div class = "full-page" id = "user-gallery">
+    <!--HEADER-->
+    <div class = "container-fluid">
+      <div class = "row" id = "top-bar">
+        <div class = "col-xs-12">
+          <div class="page-header"><h1 id = "title">Your ARTBYTES</h1></div>
+        </div>
+      </div>
+
+      <div class = "row" style = "height:20px" id = "header-margin"></div>
+    </div>
+
+
+      <!--Newsfeed Navigation-->
+    <div class = "container-fluid">
+      <div class = "row" id = "newsfeed-nav">
+          <ul class="nav nav-tabs nav-justified">
+            <div class = "col-xs-4" id = "menu-item">
+              <li role="presentation" class="active"><a href="#" id = "nav-item">ARTBYTES</a></li>
+            </div>
+            <div class = "col-xs-4" id = "menu-item">
+              <li role="presentation"><a href="#" id = "nav-item">MEGABYTES</a></li>
+            </div>
+            <div class = "col-xs-4" id = "menu-item">
+              <li role="presentation"><a href="#" id = "nav-item">EXHIBITIONS</a></li>
+            </div>
+          </ul>
+          <!--new line-->
+          <div class = "col-xs-2"></div>
+          <div class = "col-xs-4">
+            <hr id = "selected"></hr>
+          </div>
+          <div class = "col-xs-12">
+            <hr id = "menu-bottom"></hr>
+          </div>
+      </div>
+    </div>
+
+      <!--existing gallery of artbytes-->
+    <div class = "container-fluid">
+
+      <div class = "row">
+        <div class = "col-xs-4">
+          <img src = "#" id = "new-artbyte"></img>
+        </div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
+        </div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
+        </div>
+      </div>
+
+      <div class = "row">
+        <div class = "col-xs-4">
+          <img src = "#"></img>
+        </div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
+        </div>
+        <div class = "col-xs-4">
+          <img src = "#"></img>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    
+
 
   </div>
-          <script>
-          //Script to read an image taken from phone's camera
-          $('#myFileInput').change(function() {
-          const file = document.getElementById('myFileInput').files[0]
+            
 
-          var img = document.createElement("img");
-          img.classList.add("obj");
-          img.file = file;
-          img.id = "genimg"
-         
-          
-          
-          var reader = new FileReader();
-          reader.onload = (function(aImg) { return function(e) { localStorage.image = e.target.result; window.location.href = "crop-image"; }; })(img);
-          reader.readAsDataURL(file);
-          });
-          </script>  
+  <script>
+
+  function init() {
+    $('#crop-image').toggle(); //hide
+    $('#image-cropped').toggle(); //hide
+    $('#edit-info').toggle(); //hide
+    $('#user-gallery').toggle(); //hide
+  }
+
+  $("#to-newsfeed").click(function () {
+     $('#crop-image').toggle(); //hide crop page
+     $('#newsfeed').toggle(); //show newsfeed
+     $('#modal-popup').toggle(); //hide popup
+  });
+
+  $("#generate").click (function () {
+    $('#crop-image').toggle();
+    $('#image-cropped').toggle();
+    document.getElementById("cropped_image").src = document.getElementById("myimg").src;
+  });
+
+    $("#to-cropImage").click(function () {
+     $('#crop-image').toggle(); 
+     $('#image-cropped').toggle(); 
+  });
+
+    $("#to-gallery").click(function () {
+     $('#user-gallery').toggle(); 
+     $('#image-cropped').toggle(); 
+     document.getElementById("new-artbyte").src = document.getElementById("myimg").src;
+  });
+
+
+
+
+    //console.log("in js");
+  document.getElementById('myFileInput').onchange = function (evt) {
+    var tgt = evt.target || window.event.srcElement,
+        files = tgt.files;
+
+    // FileReader support
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onload = function () {
+            document.getElementById("myimg").src = fr.result;
+        }
+        fr.readAsDataURL(files[0]);
+    }
+    $('#newsfeed').toggle();
+    $('#crop-image').toggle();
+    
+  }
+  </script>  
    
     <script src="js/bootstrap.min.js"></script>
     <script src = "js/cropping.js"></script>
