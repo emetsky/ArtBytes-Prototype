@@ -8,17 +8,43 @@ body {
 
 /*** Classes ***/
 
+#ab1, #ab2, #ab3, #ab4, #ab5 {
+	max-width:75%;
+	max-height:80px;
+	display:block;
+	margin:auto;
+}
+
 .container-fluid {
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
 #cropped_image {
-	width:100%;
+	width:40%;
+	margin:auto;
+	margin-top:15px;
+	display:block;
+
+}
+#combine-image {
+	width:40%;
+	margin:auto;
+	margin-top:15px;
+	display:block;
+
+}
+
+#saved-text {
+	color:green;
+	margin:auto;
+	margin-top:15px;
+	text-align:center;
+	font-size:16px;
 }
 
 .full-page {
-		overflow-x: hidden !important;
+	overflow-x: hidden !important;
 }
 
 #get-image {
@@ -28,6 +54,15 @@ body {
     top: 60px;
     bottom: 0;
     text-align: center;
+}
+
+#edit-info {
+
+}
+
+hr {
+	margin-top:10px;
+	margin-bottom:10px;
 }
 
 .page-header {
@@ -40,6 +75,8 @@ body {
 
 .page-header p {
 	color:white;
+	font-size:16px;
+	margin:0;
 }
 
 /*** IDs ***/
@@ -76,13 +113,45 @@ body {
 	text-align: center;
 }
 
+#get-image {
+
+}
+
 #menu-item-current a {
 	text-decoration: underline;
 
 }
 
+#modal-text {
+	text-align: center;
+	color:#258AFD;
+	font-size:16px;
+	margin:0;
+	font-weight: 400;
+	text-align: center;
+}
+
+#modal-text p{
+
+	margin:0;
+
+}
+
 #myimg {
 	width:100%;
+}
+
+#form-label {
+	font-weight: 400;
+	font-size: 16px;
+}
+
+#myFileInput {
+	display: block !important;
+    width: 100% !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    margin-top:-30px;
 }
 
 #nav-item{
@@ -115,6 +184,13 @@ body {
 	font-size: 18px;
 	margin:0 !important;
 	color:white;
+}
+
+#to-exhibition p{
+	text-align: center;
+	color:#258AFD;
+	font-size:16px;
+	margin:0;
 }
 
 #top-bar {

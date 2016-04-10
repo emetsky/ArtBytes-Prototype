@@ -119,10 +119,10 @@
           <div class="navbar-header">
             <div class = "col-xs-2"></div>
             <div class = "col-xs-3">
-              <a class="navbar-brand" href="#" style = "color:#CC6666;"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+              <a class="navbar-brand" style = "color:#CC6666;"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             </div>
             <div class = "col-xs-3">
-              <a class="navbar-brand" href="#" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+              <a class="navbar-brand" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                 <div class="modal fade bs-example-modal-sm" id = "modal-popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                   <div class="modal-dialog modal-sm">
                     <div class="modal-content">
@@ -133,20 +133,23 @@
                       <div class="modal-body">
                         <ul class="list-group">
                           <li class="list-group-item">
-                            <input id="myFileInput" type="file" accept="image/*" capture="camera">
+                            <label for = "myFileInput" style = "width:100%"><p id = "modal-text">ArtBytes</p></label>
+                              <input id="myFileInput" type="file" accept="image/*capture=camera">
                           </li>
-                          <li class="list-group-item"><a href = "crop-image">Exhibition</a></li>
+                         <li class="list-group-item" id = "to-exhibition"><p>Exhibition<p></li>
                         </ul>
                       </div>
                       <div class="modal-footer" style = "text-align:left">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <ul class="list-group">
+                          <li class="list-group-item" id = "modal-text" class="close" data-dismiss="modal"><p>Cancel<p></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
             </div>
             <div class = "col-xs-3">
-              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+              <a class="navbar-brand" id = "icon-profile"><span class="glyphicon glyphicon-user" aria-hidden="true" id = "icon-profile"></span></a>
             </div>          
         </div>
       </div>
@@ -173,7 +176,7 @@
         </div>
         <div class = "col-xs-2">
           <div class="page-header">
-            <button id = "generate">Next</button>
+            <p id = "generate">Next</button>
           </div>
         </div>
         <div class = "col-xs-1"></div>
@@ -187,61 +190,6 @@
     </div>
   </div>
 
-<!--CROPPED IMAGE CANVAS-->
-<div class = "full-page" id = "image-cropped">
-    <!--HEADER-->
-    <div class = "container-fluid">
-      <div class = "row" id = "top-bar">
-        <div class = "col-xs-1"></div>
-         <div class="col-xs-2">
-          <div class="page-header">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" id = "to-cropImage" style = "color:white"></span>
-          </div>
-        </div>
-        <div class = "col-xs-6">
-          <div class="page-header">
-            <h1 id = "title">Untitled-03</h1>
-          </div>
-        </div>
-        <div class = "col-xs-2">
-          <div class="page-header">
-            <p id = "to-gallery">Save</p>
-          </div>
-        </div>
-        <div class = "col-xs-1"></div>
-            
-      </div>
-    </div>
-
-    <!--cropped image preview area-->
-    <div class = "container-fluid">
-      <div class = "col-xs-1"></div>
-      <div class = "col-xs-10">
-         <div style="float:left;"> 
-            <img src = "" id = "cropped_image" />
-        </div> 
-      </div>
-      <div class = "col-xs-1"></div>
-    </div>
-
-    <!--buttons for edit info and add another image-->
-    <div class = "container-fluid">
-      <div class = "col-xs-1"></div>
-      <div class = "col-xs-4">
-        <div class="btn-group">
-          <button type="button" class="btn btn-default" id = "to-edit" aria-expanded="false">EDIT INFO</button>
-        </div>
-      </div>
-     <div class = "col-xs-2"></div>
-      <div class = "col-xs-4">
-        <div class="btn-group">
-          <button type="button" class="btn btn-default" aria-expanded="false"><a href = "#">ADD</a></button>
-        </div>
-      </div>
-      <div class = "col-xs-1"></div>
-    </div>
-  </div>
-
 <!--EDIT CROPPED IMAGE INFO-->
   <div class = "full-page" id = "edit-info">
     <!--HEADER-->
@@ -250,7 +198,7 @@
         <div class = "col-xs-1"></div>
          <div class="col-xs-2">
           <div class="page-header">
-            <a href = "../image-cropped"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style = "color:white"></span></a>
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style = "color:white" id = "to-crop"></span>
           </div>
         </div>
         <div class = "col-xs-6">
@@ -260,111 +208,213 @@
         </div>
         <div class = "col-xs-2">
           <div class="page-header">
-            <a href = "../image-cropped"><p>Done</p></a>
+           <p id = "to-combine">Save</p>
           </div>
         </div>
-        <div class = "col-xs-1"></div>
-            
+        <div class = "col-xs-1"></div>  
       </div>
     </div>
 
     <!--cropped image preview area-->
     <div class = "container-fluid">
       <div class = "row">
-        <div class = "col-xs-1"></div>
-        <div class = "col-xs-10">
-          <img src = "#" style = "width:100%"></img>
+        <div class = "col-xs-12">
+          <img src = "" id = "cropped_image"></img>
         </div>
-        <div class = "col-xs-1"></div>
       </div>
     </div>
 
     <!--area to enter image info-->
+    <div class = "container-fluid" style = "margin-top:15px;">
+      <!--line & text-input-->
+      <div class = "row">
+          <form class="form-inline">
+            <div class="form-group">
+              <hr>
+              <div class = "col-xs-1"></div>
+              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+                <label for="title_input" id = "form-label">Title</label>
+              </div>
+              <div class = "col-xs-8" style = "padding-left:15px">
+                <input type="text" class="form-control" id="title_input">
+              </div>
+              <div class = "col-xs-1"></div>
+            </div>
+          </form>
+        </div>
+        <div class = "row">
+          <form class="form-inline">
+            <div class="form-group">
+              <hr>
+              <div class = "col-xs-1"></div>
+              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+                <label for="loc_input" id = "form-label">Location</label>
+              </div>
+              <div class = "col-xs-8" style = "padding-left:15px">
+                <input type="text" class="form-control" id="loc_input">
+              </div>
+              <div class = "col-xs-1"></div>
+            </div>
+          </form>
+        </div>
+        <div class = "row">
+          <form class="form-inline">
+            <div class="form-group">
+              <hr>
+              <div class = "col-xs-1"></div>
+              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+                <label for="artist_input" id = "form-label">Artist</label>
+              </div>
+              <div class = "col-xs-8" style = "padding-left:15px">
+                <input type="text" class="form-control" id="artist_input">
+              </div>
+              <div class = "col-xs-1"></div>
+            </div>
+          </form>
+        </div>
+        <div class = "row">
+          <form class="form-inline">
+            <div class="form-group">
+              <hr>
+              <div class = "col-xs-1"></div>
+              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+                <label for="artwork_input" id = "form-label">Artwork</label>
+              </div>
+              <div class = "col-xs-8" style = "padding-left:15px">
+                <input type="text" class="form-control" id="artwork_input">
+              </div>
+              <div class = "col-xs-1"></div>
+            </div>
+          </form>
+        </div>
+        <div class = "row">
+          <form class="form-inline">
+            <div class="form-group">
+              <hr>
+              <div class = "col-xs-1"></div>
+              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+                <label for="photo_input" id = "form-label">Photo</label>
+              </div>
+              <div class = "col-xs-8" style = "padding-left:15px">
+                <input id="myFileInput" type="file" accept="image/*capture=camera" style = "margin-top:0px">
+              </div>
+              <div class = "col-xs-1"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  <!--COMBINE ARTBYTES AREA-->
+  <div class = "full-page" id = "combine-artbytes">
+    <!--HEADER-->
     <div class = "container-fluid">
-      <!--line & text-input-->
+      <div class = "row" id = "top-bar">
+        <div class = "col-xs-1"></div>
+         <div class="col-xs-2">
+          <div class="page-header">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true" style = "color:white" id = "to-home"></span>
+          </div>
+        </div>
+        <div class = "col-xs-6">
+          <div class="page-header">
+            <h1 id = "title">Combine ArtBytes</h1>
+          </div>
+        </div>
+        <div class = "col-xs-3"></div>  
+      </div>
+    </div>
+     <div class = "container-fluid">
       <div class = "row">
         <div class = "col-xs-12">
-          <hr>
+          <p id = "saved-text"></p>
         </div>
       </div>
-      <div class = "row">
-        <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Title</span>
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-            </div>
-          </div>
-        <div class = "col-xs-1"></div>
-      </div>
-      <!--line & text-input-->
+    </div>
+
+    <!--cropped image preview area-->
+    <div class = "container-fluid">
       <div class = "row">
         <div class = "col-xs-12">
-          <hr>
+          <img src = "" id = "combine-image"></img>
         </div>
       </div>
+    </div>
+
+    
+    <div class = "container-fluid" style = "margin-top:15px;">
       <div class = "row">
         <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Location</span>
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-            </div>
-          </div>
+        <div class = "col-xs-5">
+          <a class="btn btn-default" href="#" role="button" id = "to-artbytes-gallery" style = "width:100%">ArtBytes Gallery</a>
+        </div>
+         <div class = "col-xs-5">
+          <a class="btn btn-default" href="#" role="button" id = "to-artbytes-gallery" style = "width:100%">Camera Roll
+            <input id="myFileInput" type="file" accept="image/*capture=camera" style = "margin-bottom:10px">
+          </a>
+        </div>
         <div class = "col-xs-1"></div>
       </div>
-      <!--line & text-input-->
-      <div class = "row">
-        <div class = "col-xs-12">
-          <hr>
+
+      </div>
+      
+    </div>
+
+<!--GALLERY OF JUST ARTBYTES FOR COMBINATION-->
+  <div class = "full-page" id = "artbytes-gallery">
+    <!--HEADER-->
+    <div class = "container-fluid">
+      <div class = "row" id = "top-bar">
+        <div class = "col-xs-1"></div>
+         <div class="col-xs-2">
+          <div class="page-header">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style = "color:white" id = "back-combine"></span>
+          </div>
+        </div>
+        <div class = "col-xs-6">
+          <div class="page-header">
+            <h1 id = "title">ArtBytes</h1>
+          </div>
+        </div>
+        <div class = "col-xs-2">
+          <div class="page-header">
+           <p id = "to-combine">Select</p>
+          </div>
+        </div>
+        <div class = "col-xs-1"></div>  
+      </div>
+      </div>
+
+      <div class = "row" style = "height:20px" id = "header-margin"></div>
+ 
+
+
+      <!--existing gallery of artbytes-->
+    <div class = "container-fluid">
+      <div class = "row" style = "margin-top:25px">
+        <div class = "col-xs-4">
+          <img src = "images/artbytes/sample1.png" id = "ab1"></img>
+        </div>
+        <div class = "col-xs-4">
+          <img src = "images/artbytes/sample2.png" id = "ab2"></img>
+        </div>
+        <div class = "col-xs-4">
+          <img src = "images/artbytes/sample3.png" id = "ab3"></img>
         </div>
       </div>
-      <div class = "row">
-        <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Artist</span>
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-            </div>
-          </div>
-        <div class = "col-xs-1"></div>
-      </div>
-      <!--line & text-input-->
-      <div class = "row">
-        <div class = "col-xs-12">
-          <hr>
+      <div class = "row" style = "margin-top:25px">
+        <div class = "col-xs-4">
+          <img src = "images/artbytes/sample4.png" id = "ab4"></img>
         </div>
-      </div>
-      <div class = "row">
-        <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Artwork</span>
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-            </div>
-          </div>
-        <div class = "col-xs-1"></div>
-      </div>
-      <!--line & text-input-->
-      <div class = "row">
-        <div class = "col-xs-12">
-          <hr>
+        <div class = "col-xs-4">
+          <img src = "images/artbytes/sample5.png" id = "ab5"></img>
         </div>
-      </div>
-      <div class = "row">
-        <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <div class="input-group">
-              <span class="input-group-addon" id="basic-addon1">Notes</span>
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-            </div>
-          </div>
-        <div class = "col-xs-1"></div>
       </div>
     </div>
   </div>
 
-<!--GALLERY OF ARTBYTES-->
+
+<!--GALLERY OF ARTBYTES/exhibitions-->
   <div class = "full-page" id = "user-gallery">
     <!--HEADER-->
     <div class = "container-fluid">
@@ -382,13 +432,10 @@
     <div class = "container-fluid">
       <div class = "row" id = "newsfeed-nav">
           <ul class="nav nav-tabs nav-justified">
-            <div class = "col-xs-4" id = "menu-item">
+            <div class = "col-xs-6" id = "menu-item">
               <li role="presentation" class="active"><a href="#" id = "nav-item">ARTBYTES</a></li>
             </div>
-            <div class = "col-xs-4" id = "menu-item">
-              <li role="presentation"><a href="#" id = "nav-item">MEGABYTES</a></li>
-            </div>
-            <div class = "col-xs-4" id = "menu-item">
+            <div class = "col-xs-6" id = "menu-item">
               <li role="presentation"><a href="#" id = "nav-item">EXHIBITIONS</a></li>
             </div>
           </ul>
@@ -432,11 +479,48 @@
 
 
     </div>
-
-
-    
-
-
+ <!-- Beginning of Bottom Nav -->
+    <nav class="navbar navbar-default navbar-fixed-bottom" id = "bottom-nav1">
+      <div class="container-fluid">
+          <div class="navbar-header">
+            <div class = "col-xs-2"></div>
+            <div class = "col-xs-3">
+              <a class="navbar-brand" id = "icon-newsfeed"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            </div>
+            <div class = "col-xs-3">
+              <a class="navbar-brand" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                <div class="modal fade bs-example-modal-sm" id = "modal-popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Create</h4>
+                      </div>
+                      <div class="modal-body">
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <label for = "myFileInput" style = "width:100%"><p id = "modal-text">ArtBytes</p></label>
+                              <input id="myFileInput" type="file" accept="image/*capture=camera">
+                          </li>
+                         <li class="list-group-item" id = "to-exhibition"><p>Exhibition<p></li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer" style = "text-align:left">
+                        <ul class="list-group">
+                          <li class="list-group-item" id = "modal-text" class="close" data-dismiss="modal"><p>Cancel<p></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class = "col-xs-3">
+              <a class="navbar-brand" style = "color:#CC6666;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+            </div>          
+        </div>
+      </div>
+    </nav>
+    <!-- End of Bottom Nav -->
   </div>
             
 
@@ -447,6 +531,8 @@
     $('#image-cropped').toggle(); //hide
     $('#edit-info').toggle(); //hide
     $('#user-gallery').toggle(); //hide
+    $('#combine-artbytes').toggle(); //hide
+    $('#artbytes-gallery').toggle();
   }
 
   $("#to-newsfeed").click(function () {
@@ -457,7 +543,7 @@
 
   $("#generate").click (function () {
     $('#crop-image').toggle();
-    $('#image-cropped').toggle();
+    $('#edit-info').toggle();
     document.getElementById("cropped_image").src = document.getElementById("myimg").src;
   });
 
@@ -469,9 +555,62 @@
     $("#to-gallery").click(function () {
      $('#user-gallery').toggle(); 
      $('#image-cropped').toggle(); 
-     document.getElementById("new-artbyte").src = document.getElementById("myimg").src;
+     document.getElementById("new-artbyte").src = document.getElementById("cropped_image").src;
   });
 
+    $("#to-exhibition").click(function () {
+      $('#newsfeed').toggle();
+      $('#user-gallery').toggle(); //CHANGE ONCE AR IS INCLUDED
+
+
+    });
+  $("#to-crop").click(function () {
+      $('#edit-info').toggle();
+      $('#crop-image').toggle(); 
+
+
+    });
+    $("#to-artbytes-gallery").click(function () {
+      $('#combine-artbytes').toggle();
+      $('#artbytes-gallery').toggle(); 
+
+
+    });
+
+    $("#to-combine").click(function () {
+      $('#edit-info').toggle();
+      $('#combine-artbytes').toggle(); 
+      document.getElementById("combine-image").src = document.getElementById("cropped_image").src;
+      document.getElementById("saved-text").innerHTML = "The " + document.getElementById("title_input").value + " has been saved!";
+
+
+
+    });
+      $("#to-home").click(function () {
+        $('#combine-artbytes').toggle();
+        $('#newsfeed').toggle(); 
+        $('#modal-popup').toggle();
+
+    });
+
+      $("#icon-newsfeed").click(function () {
+        $('#user-gallery').toggle();
+        $('#newsfeed').toggle(); 
+        //$('#modal-popup').toggle();
+
+    });
+   $("#back-combine").click(function () {
+        $('#artbytes-gallery').toggle();
+        $('#combine-artbytes').toggle(); 
+        
+
+    });
+      $("#icon-profile").click(function () {
+        $('#user-gallery').toggle();
+        $('#newsfeed').toggle(); 
+        
+
+    });
 
 
 
