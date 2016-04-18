@@ -13,387 +13,144 @@
    <link href="css/style.css" rel="stylesheet">
     <script src = "js/myscripts.js"></script>
     <script src = "js/javascript.js"></script>
+     <script src = "js/polyclip-p.js"></script>
+     <script type="text/javascript" src="js/ar/awe-loader-min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
+ 
   </head>
 
   <body onload = "init ()">
-
-  <!--NEWSFEED/HOMEPAGE-->
-  <div class = "full-page" id = "newsfeed">
-    <!-- Beginning of Header -->
-    <div class = "container-fluid">
-      <div class = "row" id = "top-bar">
-        <div class = "col-xs-12">
-          <div class = "page-header">
-            <h1 id = "title">ARTBYTES</h1>
-          </div>
-        </div>
-      </div>
-
-      <div class = "row" style = "height:20px"></div>
-    </div>
-    <!-- End of Header -->
-
-    <!-- Beginning of Newsfeed Navigation -->
-    <div class = "container-fluid">
-      <div class = "row" id = "newsfeed-nav">
-        <div class = "col-xs-2"></div>
-          <ul class="nav nav-tabs nav-justified">
-            <div class = "col-xs-4" id = "menu-item">
-              <li role="presentation" class="active"><a href="#" id = "nav-item">FOLLOWING</a></li>
-            </div>
-            <div class = "col-xs-4" id = "menu-item">
-              <li role="presentation"><a href="#" id = "nav-item">DISCOVER</a></li>
-            </div>
-          </ul>
-          <div class = "col-xs-2"></div>
-          <!--new line-->
-          <div class = "col-xs-2"></div>
-          <div class = "col-xs-4">
-            <hr id = "selected"></hr>
-          </div>
-          <div class = "col-xs-12">
-            <hr id = "menu-bottom"></hr>
-          </div>
-      </div>
-    </div>
-    <!-- End of Newsfeed Navigation -->
-
-    <!--Beginning of Newsfeed Items-->
-    <div class = "container-fluid">
-      <div class = "row">
-        <div class = "col-xs-1"></div>
-          <div class = "col-xs-11">
-            <h5>sanjana</h5>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <img src = "images/newsfeed-image.png" style = "width:100%"></img>
-          </div>
-          <div class = "col-xs-1"></div>
-        </div>
-        
-        <div class = "row">
-          <div class = "col-xs-1"></div>
-          <div class = "col-xs-11">
-            <p>@ Carnegie Mellon Museum of Art <br>rjue saved this<br>evan.metsky saved this</p>
-          </div>
-        </div>
-
-
-    </div>
+  
+  <!--begin screen of artbytes gallery-->
+  <div class = "full-page" id = "homescreen_artbytes">
     
-
+    <!--ArtBytes header-->
     <div class = "container-fluid">
-      <div class = "row">
-        <div class = "col-xs-1"></div>
-          <div class = "col-xs-11">
-            <h5>evan.metsky</h5>
-          </div>
-        </div>
-        <div class = "row">
-          <div class = "col-xs-1"></div>
-          <div class = "col-xs-10">
-            <img src = "images/newsfeed-image2.jpg" style = "width:100%"></img>
-          </div>
-          <div class = "col-xs-1"></div>
-        </div>
-        
-        <div class = "row">
-          <div class = "col-xs-1"></div>
-          <div class = "col-xs-11">
-            <p>@ Carnegie Natural History Museum <br>minakim saved this</p>
-          </div>
-        </div>
-
-
-    </div>
-    <!-- End of Newsfeed Items -->
-
-    <!-- Beginning of Bottom Nav -->
-    <nav class="navbar navbar-default navbar-fixed-bottom" id = "bottom-nav">
-      <div class="container-fluid">
-          <div class="navbar-header">
-            <div class = "col-xs-2"></div>
-            <div class = "col-xs-3">
-              <a class="navbar-brand" style = "color:#CC6666;"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-            </div>
-            <div class = "col-xs-3">
-              <a class="navbar-brand" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                <div class="modal fade bs-example-modal-sm" id = "modal-popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Create</h4>
-                      </div>
-                      <div class="modal-body">
-                        <ul class="list-group">
-                          <li class="list-group-item">
-                            <label for = "myFileInput" style = "width:100%"><p id = "modal-text">ArtBytes</p></label>
-                              <input id="myFileInput" type="file" accept="image/*capture=camera">
-                          </li>
-                         <li class="list-group-item" id = "to-exhibition"><p>Exhibition<p></li>
-                        </ul>
-                      </div>
-                      <div class="modal-footer" style = "text-align:left">
-                        <ul class="list-group">
-                          <li class="list-group-item" id = "modal-text" class="close" data-dismiss="modal"><p>Cancel<p></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class = "col-xs-3">
-              <a class="navbar-brand" id = "icon-profile"><span class="glyphicon glyphicon-user" aria-hidden="true" id = "icon-profile"></span></a>
-            </div>          
-        </div>
+      <div class = "page-header">
+        <h4>ArtBytes</h4>
       </div>
-    </nav>
-    <!-- End of Bottom Nav -->
-  </div>
+    </div>
 
-  <!--BEGIN CROPPING PAGE-->
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
 
-  <div class = "full-page" id = "crop-image">
-    <!--HEADER-->
+    <!--top nav for artbytes and exhibition pages-->
     <div class = "container-fluid">
-      <div class = "row" id = "top-bar">
-        <div class = "col-xs-1"></div>
-         <div class="col-xs-2">
-          <div class="page-header">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" id = "to-newsfeed" style = "color:white"></span>
+      <div class = "row" id = "top_nav">
+        <ul class="nav nav-tabs nav-justified">
+          <div class = "col-xs-6" id = "menu-item">
+            <li role="presentation" class="active"><h5 style = "color:#7469AD;">ArtBytes<h5></li>
           </div>
-        </div>
+          <div class = "col-xs-6" id = "menu-item">
+            <li role="presentation" id = "to_homescreen_exhibition"><h5>Exhibition</h5></li>
+          </div>
+        </ul>
+
+        <!--for the underlines of the pages-->
         <div class = "col-xs-6">
-          <div class="page-header">
-            <h1 id = "title">Crop Image</h1>
-          </div>
+          <hr id = "selected"></hr>
         </div>
-        <div class = "col-xs-2">
-          <div class="page-header">
-            <p id = "generate">Next</button>
-          </div>
+        <div class = "col-xs-6"></div>
+        <div class = "col-xs-12">
+          <hr id = "menu-bottom"></hr>
         </div>
-        <div class = "col-xs-1"></div>
-            
       </div>
     </div>
 
-    <!--image cropping area-->
-    <div class = "container-fluid" id = "get-image">
-      <img src = "" id = "myimg" />
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
+
+    <!--remainder of page-->
+    <div class = "container-fluid" id = "page_margins">
+      <!--top buttons for create and combine-->
+      <div class = "row">
+        <div class = "col-xs-6">
+          <button class="btn btn-default" id = "create_button"><span class="glyphicon glyphicon-plus" aria-hidden="true" style = "padding-right:5px"></span>Create New</button>
+        </div>
+         <div class = "col-xs-6">
+          <button class="btn btn-default" id = "combine_button"><span class="glyphicon glyphicon-duplicate" aria-hidden="true" style = "padding-right:5px"></span>Combine</button>
+        </div>
+      </div>
+
+      <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+
+      <!--gallery of artbytes-->
+      <div class = "container-fluid">
+      <div class = "row" id = "artbytes_gallery">
+        <div class = "col-xs-4" id = "new_artbyte_div">
+          <img src = "images/artbytes/sample4.png" id = "ab1" onclick = "getArtByteInfo('ab1')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div">
+          <img src = "images/artbytes/sample2.png" id = "ab2" onclick = "getArtByteInfo('ab2')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div">
+          <img src = "images/artbytes/sample3.png" id = "ab3" onclick = "getArtByteInfo('ab3')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div">
+          <img src = "images/artbytes/sample1.png" id = "ab4" onclick = "getArtByteInfo('ab4')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div">
+          <img src = "images/artbytes/sample5.png" id = "ab5" onclick = "getArtByteInfo('ab5')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div">
+          <img src = "images/artbytes/sample6.png" id = "ab6" onclick = "getArtByteInfo('ab6')"></img>
+        </div>
+      </div>
     </div>
   </div>
+  </div>
 
-<!--EDIT CROPPED IMAGE INFO-->
-  <div class = "full-page" id = "edit-info">
-    <!--HEADER-->
-    <div class = "container-fluid">
-      <div class = "row" id = "top-bar">
-        <div class = "col-xs-1"></div>
-         <div class="col-xs-2">
-          <div class="page-header">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style = "color:white" id = "to-crop"></span>
-          </div>
-        </div>
-        <div class = "col-xs-6">
-          <div class="page-header">
-            <h1 id = "title">Edit Image Info</h1>
-          </div>
-        </div>
-        <div class = "col-xs-2">
-          <div class="page-header">
-           <p id = "to-combine">Save</p>
-          </div>
-        </div>
-        <div class = "col-xs-1"></div>  
-      </div>
-    </div>
-
-    <!--cropped image preview area-->
-    <div class = "container-fluid">
-      <div class = "row">
-        <div class = "col-xs-12">
-          <img src = "" id = "cropped_image"></img>
-        </div>
-      </div>
-    </div>
-
-    <!--area to enter image info-->
-    <div class = "container-fluid" style = "margin-top:15px;">
-      <!--line & text-input-->
-      <div class = "row">
-          <form class="form-inline">
-            <div class="form-group">
-              <hr>
-              <div class = "col-xs-1"></div>
-              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
-                <label for="title_input" id = "form-label">Title</label>
-              </div>
-              <div class = "col-xs-8" style = "padding-left:15px">
-                <input type="text" class="form-control" id="title_input">
-              </div>
-              <div class = "col-xs-1"></div>
-            </div>
-          </form>
-        </div>
-        <div class = "row">
-          <form class="form-inline">
-            <div class="form-group">
-              <hr>
-              <div class = "col-xs-1"></div>
-              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
-                <label for="loc_input" id = "form-label">Location</label>
-              </div>
-              <div class = "col-xs-8" style = "padding-left:15px">
-                <input type="text" class="form-control" id="loc_input">
-              </div>
-              <div class = "col-xs-1"></div>
-            </div>
-          </form>
-        </div>
-        <div class = "row">
-          <form class="form-inline">
-            <div class="form-group">
-              <hr>
-              <div class = "col-xs-1"></div>
-              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
-                <label for="artist_input" id = "form-label">Artist</label>
-              </div>
-              <div class = "col-xs-8" style = "padding-left:15px">
-                <input type="text" class="form-control" id="artist_input">
-              </div>
-              <div class = "col-xs-1"></div>
-            </div>
-          </form>
-        </div>
-        <div class = "row">
-          <form class="form-inline">
-            <div class="form-group">
-              <hr>
-              <div class = "col-xs-1"></div>
-              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
-                <label for="artwork_input" id = "form-label">Artwork</label>
-              </div>
-              <div class = "col-xs-8" style = "padding-left:15px">
-                <input type="text" class="form-control" id="artwork_input">
-              </div>
-              <div class = "col-xs-1"></div>
-            </div>
-          </form>
-        </div>
-        <div class = "row">
-          <form class="form-inline">
-            <div class="form-group">
-              <hr>
-              <div class = "col-xs-1"></div>
-              <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
-                <label for="photo_input" id = "form-label">Photo</label>
-              </div>
-              <div class = "col-xs-8" style = "padding-left:15px">
-                <input id="myFileInput" type="file" accept="image/*capture=camera" style = "margin-top:0px">
-              </div>
-              <div class = "col-xs-1"></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-  <!--COMBINE ARTBYTES AREA-->
-  <div class = "full-page" id = "combine-artbytes">
-    <!--HEADER-->
-    <div class = "container-fluid">
-      <div class = "row" id = "top-bar">
-        <div class = "col-xs-1"></div>
-         <div class="col-xs-2">
-          <div class="page-header">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true" style = "color:white" id = "to-home"></span>
-          </div>
-        </div>
-        <div class = "col-xs-6">
-          <div class="page-header">
-            <h1 id = "title">Combine ArtBytes</h1>
-          </div>
-        </div>
-        <div class = "col-xs-3"></div>  
-      </div>
-    </div>
-     <div class = "container-fluid">
-      <div class = "row">
-        <div class = "col-xs-12">
-          <p id = "saved-text"></p>
-        </div>
-      </div>
-    </div>
-
-    <!--cropped image preview area-->
-    <div class = "container-fluid">
-      <div class = "row">
-        <div class = "col-xs-12">
-          <img src = "" id = "combine-image"></img>
-        </div>
-      </div>
-    </div>
-
+   <!--begin screen of exhibitions gallery-->
+  <div class = "full-page" id = "homescreen_exhibition">
     
-    <div class = "container-fluid" style = "margin-top:15px;">
-      <div class = "row">
-        <div class = "col-xs-1"></div>
-        <div class = "col-xs-5">
-          <a class="btn btn-default" href="#" role="button" id = "to-artbytes-gallery" style = "width:100%">ArtBytes Gallery</a>
-        </div>
-         <div class = "col-xs-5">
-          <a class="btn btn-default" href="#" role="button" id = "to-artbytes-gallery" style = "width:100%">Camera Roll
-            <input id="myFileInput" type="file" accept="image/*capture=camera" style = "margin-bottom:10px">
-          </a>
-        </div>
-        <div class = "col-xs-1"></div>
+    <!--ArtBytes header-->
+    <div class = "container-fluid">
+      <div class = "page-header">
+        <h4>ArtBytes</h4>
       </div>
-
-      </div>
-      
     </div>
 
-<!--GALLERY OF JUST ARTBYTES FOR COMBINATION-->
-  <div class = "full-page" id = "artbytes-gallery">
-    <!--HEADER-->
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
+
+    <!--top nav for artbytes and exhibition pages-->
     <div class = "container-fluid">
-      <div class = "row" id = "top-bar">
-        <div class = "col-xs-1"></div>
-         <div class="col-xs-2">
-          <div class="page-header">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style = "color:white" id = "back-combine"></span>
+      <div class = "row" id = "top_nav">
+        <ul class="nav nav-tabs nav-justified">
+          <div class = "col-xs-6" id = "menu-item">
+            <li role="presentation" id = "to_homescreen_artbytes"><h5>ArtBytes<h5></li>
           </div>
-        </div>
+          <div class = "col-xs-6" id = "menu-item">
+            <li role="presentation" class="active"><h5 style = "color:#7469AD;">Exhibition</h5></li>
+          </div>
+        </ul>
+
+        <!--for the underlines of the pages-->
+        <div class = "col-xs-6"></div>
         <div class = "col-xs-6">
-          <div class="page-header">
-            <h1 id = "title">ArtBytes</h1>
-          </div>
+          <hr id = "selected"></hr>
         </div>
-        <div class = "col-xs-2">
-          <div class="page-header">
-           <p id = "to-combine">Select</p>
-          </div>
+        <div class = "col-xs-6"></div>
+        <div class = "col-xs-12">
+          <hr id = "menu-bottom"></hr>
         </div>
-        <div class = "col-xs-1"></div>  
       </div>
+    </div>
+
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
+
+    <!--remainder of page-->
+    <div class = "container-fluid" id = "page_margins">
+      <!--top buttons for create and combine-->
+      <div class = "row">
+        <div class = "col-xs-12">
+          <button class="btn btn-default" id = "exhibition_button"><span class="glyphicon glyphicon-plus" aria-hidden="true" style = "padding-right:5px"></span>Post New Exhibition</button>
+        </div>
       </div>
 
-      <div class = "row" style = "height:20px" id = "header-margin"></div>
- 
+      <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
 
-
-      <!--existing gallery of artbytes-->
-    <div class = "container-fluid">
-      <div class = "row" style = "margin-top:25px">
+      <!--gallery of artbytes-->
+      <div class = "row">
         <div class = "col-xs-4">
-          <img src = "images/artbytes/sample1.png" id = "ab1"></img>
+          <img src = "images/artbytes/sample4.png" id = "ab1"></img>
         </div>
         <div class = "col-xs-4">
           <img src = "images/artbytes/sample2.png" id = "ab2"></img>
@@ -402,220 +159,1074 @@
           <img src = "images/artbytes/sample3.png" id = "ab3"></img>
         </div>
       </div>
-      <div class = "row" style = "margin-top:25px">
+      <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+      <div class = "row">
         <div class = "col-xs-4">
-          <img src = "images/artbytes/sample4.png" id = "ab4"></img>
+          <img src = "images/artbytes/sample1.png" id = "ab4"></img>
         </div>
         <div class = "col-xs-4">
           <img src = "images/artbytes/sample5.png" id = "ab5"></img>
         </div>
+        <div class = "col-xs-4">
+          <img src = "images/artbytes/sample6.png" id = "ab6"></img>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div class = "full-page" id = "camera_roll">
+    
+    <!--ArtBytes header-->
+    <div class = "container-fluid">
+      <div class = "page-header">
+        <div class = "col-xs-2">
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true" id = "back_homescreen_artbytes"></span>
+        </div>
+        <div class = "col-xs-8">
+          <h4>Camera Roll</h4>
+        </div>
+        <div class = "col-xs-2"></div>
+      </div>
+    </div>
+    <!--begin gallery of current images-->
+    <div class = "container-fluid" id = "gallery">
+      <div class = "row">
+        <!--for taking pic from camera-->
+        <div class = "col-xs-6" style = "margin:0;padding:1px" id = "camera_background">
+          <input id="myFileInput" type="file" accept="image/*" capture="camera">
+        </div>
+        <!--remainder of images in gallery-->
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g1.png" id = "g1" onclick = "crop_this ('g1')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g2.png" id = "g2" onclick = "crop_this ('g2')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g3.png" id = "g3" onclick = "crop_this ('g3')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g4.png" id = "g4" onclick = "crop_this ('g4')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g5.png" id = "g5" onclick = "crop_this ('g5')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g6.png" id = "g6" onclick = "crop_this ('g6')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g7.png" id = "g7" onclick = "crop_this ('g7')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g8.png" id = "g8" onclick = "crop_this ('g8')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g9.png" id = "g9" onclick = "crop_this ('g9')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g10.png" id = "g10" onclick = "crop_this ('g10')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g11.png" id = "g11" onclick = "crop_this ('g11')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g12.png" id = "g12" onclick = "crop_this ('g12')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g13.png" id = "g13" onclick = "crop_this ('g13')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g14.png" id = "g14" onclick = "crop_this ('g14')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g15.png" id = "g15" onclick = "crop_this ('g15')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g16.png" id = "g16" onclick = "crop_this ('g16')"></img></div>
+         <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g17.png" id = "g17" onclick = "crop_this ('g17')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g18.png" id = "g18" onclick = "crop_this ('g18')"></img></div>
+        <div class = "col-xs-3" style = "margin:0;padding:1px"><img src = "images/gallery/g19.png" id = "g19" onclick = "crop_this ('g19')"></img></div>
       </div>
     </div>
   </div>
 
-
-<!--GALLERY OF ARTBYTES/exhibitions-->
-  <div class = "full-page" id = "user-gallery">
-    <!--HEADER-->
+  <div class = "full-page" id = "crop_image">
+    
+    <!--ArtBytes header-->
     <div class = "container-fluid">
-      <div class = "row" id = "top-bar">
+      <div class = "page-header">
+        <div class = "col-xs-2" id = "back_to_gallery">
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true" id = "back_to_gallery_icon"></span>
+        </div>
+        <div class = "col-xs-8">
+          <h4>Crop Image</h4>
+        </div>
+
+        <div class = "col-xs-2">
+          <p id = "next_to_info">Next</p>
+        </div>
+      </div>
+    </div>
+    <div class = "container-fluid">
+      <div id="canvasDiv">
+      </div>
+    </div>
+  </div>
+
+  <!--begin page to edit info of newly cropped artbyte-->
+  <div class = "full-page" id = "edit_info">
+    
+    <!--ArtBytes header-->
+    <div class = "container-fluid">
+      <div class = "page-header">
+        <div class = "col-xs-2">
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true" id = "back_to_crop"></span>
+        </div>
+        <div class = "col-xs-8">
+          <h4>Edit ArtByte Info</h4>
+        </div>
+        <div class = "col-xs-2">
+          <p id = "save_to_savedArtByte">Save</p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+
+    <div class = "container-fluid" id = "cropped_artbyte">
+      <div class="clipParent" style="float:left;" id = "get-this">
+        <img src = "" id = "temp_edit"> 
+      </div> 
+    </div>
+
+  <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+
+  <!--begin form for editing the info of the artbyte-->
+  <div class = "container-fluid">
+    <div class = "row">
+      <form class="form-inline">
+        <div class="form-group">
+          <hr>
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+            <label for="title_input" id = "form-label">Title</label>
+          </div>
+          <div class = "col-xs-8" style = "padding-left:15px;padding-top:5px;padding-bottom:5px;">
+            <input type="text" class="form-control" id="title_input">
+          </div>
+          <div class = "col-xs-1"></div>
+        </div>
+      </form>
+    </div>
+    <div class = "row">
+      <div class = "col-xs-12">
+        <a data-toggle="collapse" href="#collapse1" id = "expand">
+          <hr>
+          <p style = "color:black;margin-top:10px;margin-bottom:0px">Expand to add more info</p>
+          <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style = "color:black;font-size:18px;display:block"></span>
+          <hr>
+        </a>
+      </div>
+    </div>
+    <div class="panel-collapse collapse" id = "collapse1">
+      <div class = "row">
+        <form class="form-inline">
+          <div class="form-group">
+            <hr>
+            <div class = "col-xs-1"></div>
+            <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+              <label for="loc_input" id = "form-label">Location</label>
+            </div>
+            <div class = "col-xs-8" style = "padding-left:15px;padding-top:5px;padding-bottom:5px;">
+              <input type="text" class="form-control" id="loc_input">
+            </div>
+            <div class = "col-xs-1"></div>
+          </div>
+        </form>
+      </div>
+      <div class = "row">
+        <form class="form-inline">
+          <div class="form-group">
+            <hr>
+            <div class = "col-xs-1"></div>
+            <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+              <label for="artist_input" id = "form-label">Artist</label>
+            </div>
+            <div class = "col-xs-8" style = "padding-left:15px;padding-top:5px;padding-bottom:5px;">
+              <input type="text" class="form-control" id="artist_input">
+            </div>
+            <div class = "col-xs-1"></div>
+          </div>
+        </form>
+      </div>
+      <div class = "row">
+        <form class="form-inline">
+          <div class="form-group">
+            <hr>
+            <div class = "col-xs-1"></div>
+            <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+              <label for="photo_input" id = "form-label">Description</label>
+            </div>
+            <div class = "col-xs-8" style = "padding-left:15px;padding-top:5px;padding-bottom:5px;">
+              <input class = "btn btn-default" id="myFileInput2" type="file" accept="image/*capture=camera" style = "margin-top:0px;width:100%">
+            </div>
+            <div class = "col-xs-1"></div>
+          </div>
+        </form>
+      </div>
+      <div class = "row">
         <div class = "col-xs-12">
-          <div class="page-header"><h1 id = "title">Your ARTBYTES</h1></div>
+          <hr>
+          <a data-toggle="collapse" href="#collapse1" id = "collapse">
+            <span class="glyphicon glyphicon-menu-up" aria-hidden="true" style = "color:black;font-size:18px;display:block;padding:5px"></span>
+          </a>
+          <hr>
         </div>
       </div>
 
-      <div class = "row" style = "height:20px" id = "header-margin"></div>
-    </div>
-
-
-      <!--Newsfeed Navigation-->
-    <div class = "container-fluid">
-      <div class = "row" id = "newsfeed-nav">
-          <ul class="nav nav-tabs nav-justified">
-            <div class = "col-xs-6" id = "menu-item">
-              <li role="presentation" class="active"><a href="#" id = "nav-item">ARTBYTES</a></li>
-            </div>
-            <div class = "col-xs-6" id = "menu-item">
-              <li role="presentation"><a href="#" id = "nav-item">EXHIBITIONS</a></li>
-            </div>
-          </ul>
-          <!--new line-->
-          <div class = "col-xs-2"></div>
-          <div class = "col-xs-4">
-            <hr id = "selected"></hr>
-          </div>
-          <div class = "col-xs-12">
-            <hr id = "menu-bottom"></hr>
-          </div>
       </div>
     </div>
 
-      <!--existing gallery of artbytes-->
-    <div class = "container-fluid">
-
-      <div class = "row">
-        <div class = "col-xs-4">
-          <img src = "#" id = "new-artbyte"></img>
-        </div>
-        <div class = "col-xs-4">
-          <img src = "#"></img>
-        </div>
-        <div class = "col-xs-4">
-          <img src = "#"></img>
-        </div>
-      </div>
-
-      <div class = "row">
-        <div class = "col-xs-4">
-          <img src = "#"></img>
-        </div>
-        <div class = "col-xs-4">
-          <img src = "#"></img>
-        </div>
-        <div class = "col-xs-4">
-          <img src = "#"></img>
-        </div>
-      </div>
-
-
-    </div>
- <!-- Beginning of Bottom Nav -->
-    <nav class="navbar navbar-default navbar-fixed-bottom" id = "bottom-nav1">
-      <div class="container-fluid">
-          <div class="navbar-header">
-            <div class = "col-xs-2"></div>
-            <div class = "col-xs-3">
-              <a class="navbar-brand" id = "icon-newsfeed"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-            </div>
-            <div class = "col-xs-3">
-              <a class="navbar-brand" data-toggle="modal" data-target=".bs-example-modal-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                <div class="modal fade bs-example-modal-sm" id = "modal-popup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Create</h4>
-                      </div>
-                      <div class="modal-body">
-                        <ul class="list-group">
-                          <li class="list-group-item">
-                            <label for = "myFileInput" style = "width:100%"><p id = "modal-text">ArtBytes</p></label>
-                              <input id="myFileInput" type="file" accept="image/*capture=camera">
-                          </li>
-                         <li class="list-group-item" id = "to-exhibition"><p>Exhibition<p></li>
-                        </ul>
-                      </div>
-                      <div class="modal-footer" style = "text-align:left">
-                        <ul class="list-group">
-                          <li class="list-group-item" id = "modal-text" class="close" data-dismiss="modal"><p>Cancel<p></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class = "col-xs-3">
-              <a class="navbar-brand" style = "color:#CC6666;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-            </div>          
-        </div>
-      </div>
-    </nav>
-    <!-- End of Bottom Nav -->
   </div>
-            
 
+  <div class = "full-page" id = "saved_artbyte">
+    
+    <!--ArtBytes header-->
+    <div class = "container-fluid">
+      <div class = "page-header">
+        <div class = "col-xs-2">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" id = "to_gallery_with_artbyte"></span>
+        </div>
+        <div class = "col-xs-8">
+          <h4 id = "title_header"></h4>
+        </div>
+        <div class = "col-xs-2">
+          <p id = "back_to_info">Edit</p>
+        </div>
+      </div>
+    </div>
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-xs-12">
+          <p id = "saved_feedback"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "container-fluid">
+      <img src = "" id = "myimg_cropped_saved"/>
+    </div>
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
+    <div class = "container-fluid">
+      <div class = "row">
+        <hr>
+        <div class = "col-xs-1"></div>
+        <div class = "col-xs-2">
+          <p id = "label_down">Title</p>
+        </div>
+        <div class = "col-xs-8">
+          <p id = "title_saved"></p>
+        </div>
+        <div class = "col-xs-1"></div>
+      </div>
+ 
+        <div class = "row">
+          <hr>
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-2">
+            <p id = "label_down">Location</p>
+          </div>
+          <div class = "col-xs-8">
+            <p id = "location_saved"></p>
+          </div>
+          <div class = "col-xs-1"></div>
+        </div>
+        <div class = "row">
+          <hr>
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-2">
+            <p id = "label_down">Artist</p>
+          </div>
+          <div class = "col-xs-8">
+            <p id = "artist_saved"></p>
+          </div>
+          <div class = "col-xs-1"></div>
+        </div>
+        <div class = "row">
+          <hr>
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-2">
+            <p id = "label_down">Description</p>
+          </div>
+          <div class = "col-xs-8">
+            <p id = "description_saved"></p>
+          </div>
+          <div class = "col-xs-1"></div>
+          
+    
+      </div>
+
+
+   <div class = "line-gap" style = "height:15px"></div> <!--15px line gap-->
+   
+    <!--begin two buttons for combine and post as exhibition-->
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-xs-2"></div>
+        <div class = "col-xs-8">
+          <button class="btn btn-default" id = "combine_button_saved">Combine with Other ArtBytes</button>
+        </div>
+        <div class = "col-xs-2"></div>
+      </div>
+      <div class = "line-gap" style = "height:10px"></div> <!--10px line gap-->
+      <div class = "row">
+        <div class = "col-xs-2"></div>
+        <div class = "col-xs-8">
+          <button class="btn btn-default" id = "exhibition_button_saved">Post as an Exhibition</button>
+        </div>
+        <div class = "col-xs-2"></div>
+      </div>
+    </div>
+       <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+  </div>
+</div>
+  <div class = "full-page" id = "combine_artbytes">
+    
+    <!--ArtBytes header-->
+    <div class = "container-fluid">
+      <div class = "page-header">
+        <div class = "col-xs-2">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" id = "combine_back_homescreen_artbytes"></span>
+        </div>
+        <div class = "col-xs-8">
+          <h4>Combine ArtBytes</h4>
+        </div>
+        <div class = "col-xs-2">
+          <p id = "to_combine_info">Next</p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
+
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-xs-2"></div>
+        <div class = "col-xs-8">
+          <div id = "combine_canvas">
+          </div>
+        </div>
+        <div class = "col-xs-2"></div>
+      </div>
+    </div>
+
+    <div class = "container-fluid">
+      <div class = "row" id = "artbytes_preview">
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample4.png" id = "ab1" onclick = "onCanvas ('ab1')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample2.png" id = "ab2" onclick = "onCanvas ('ab2')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample3.png" id = "ab3" onclick = "onCanvas ('ab3')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample1.png" id = "ab4" onclick = "onCanvas ('ab4')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample5.png" id = "ab5" onclick = "onCanvas ('ab5')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample6.png" id = "ab6" onclick = "onCanvas ('ab6')"></img>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class = "full-page" id = "combine_info">
+    
+    <div class = "container-fluid">
+      <div class = "page-header">
+        <div class = "col-xs-2">
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true" id = "back_to_combine"></span>
+        </div>
+        <div class = "col-xs-8">
+          <h4>Edit ArtBytes Info</h4>
+        </div>
+        <div class = "col-xs-2">
+          <p id = "save_to_savedCombinedArtBytes">Save</p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+
+    <div class = "container-fluid" id = "cropped_artbyte">
+      <div class = "row">
+        <div class = "col-xs-2"></div>
+        <div class = "col-xs-8">
+          <img src = "" id = "combined_artbyte" />
+        </div>
+        <div class = "col-xs-2"></div>
+      </div>
+    </div>
+
+  <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+
+  <!--begin form for editing the info of the artbyte-->
+  <div class = "container-fluid">
+    <div class = "row">
+      <form class="form-inline">
+        <div class="form-group">
+          <hr>
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+            <label for="title_combinedInput" id = "form-label">Title</label>
+          </div>
+          <div class = "col-xs-8" style = "padding-left:15px;padding-top:5px;padding-bottom:5px;">
+            <input type="text" class="form-control" id="title_combinedInput">
+          </div>
+          <div class = "col-xs-1"></div>
+        </div>
+      </form>
+    </div>
+    <div class = "row">
+      <div class = "col-xs-12">
+        
+        
+        <a data-toggle="collapse" href="#collapse3" id = "expand3">
+          <hr>
+          <p style = "color:black;margin-top:10px;margin-bottom:0px">Expand to add more info</p>
+          <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style = "color:black;font-size:18px;display:block;margin:auto"></span>
+         <hr>
+        </a>
+      </div>
+    </div>
+    <div class="panel-collapse collapse" id = "collapse3" style = "margin-top:0px">
+      <div class = "row">
+        <form class="form-inline">
+          <div class="form-group">
+            <hr>
+            <div class = "col-xs-1"></div>
+            <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+              <label for="loc_combinedInput" id = "form-label">Location</label>
+            </div>
+            <div class = "col-xs-8" style = "padding-left:15px;padding-top:5px;padding-bottom:5px;">
+              <input type="text" class="form-control" id="loc_combinedInput">
+            </div>
+            <div class = "col-xs-1"></div>
+          </div>
+        </form>
+      </div>
+      <div class = "row">
+        <form class="form-inline">
+          <div class="form-group">
+            <hr>
+            <div class = "col-xs-1"></div>
+            <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+              <label for="artist_combinedInput" id = "form-label">Artist</label>
+            </div>
+            <div class = "col-xs-8" style = "padding-left:15px;padding-top:5px;padding-bottom:5px;">
+              <input type="text" class="form-control" id="artist_combinedInput">
+            </div>
+            <div class = "col-xs-1"></div>
+          </div>
+        </form>
+      </div>
+      <div class = "row">
+        <form class="form-inline">
+          <div class="form-group">
+            <hr>
+            <div class = "col-xs-1"></div>
+            <div class = "col-xs-2" style = "padding-top:5px;padding-left:0;">
+              <label for="photo_combinedInput" id = "form-label">Description</label>
+            </div>
+            <div class = "col-xs-8" style = "padding-left:15px;padding-top:5px;padding-bottom:5px;">
+              <input class = "btn btn-default" id="myFileInput2" type="file" accept="image/*capture=camera" style = "margin-top:0px;width:100%">
+            </div>
+            <div class = "col-xs-1"></div>
+          </div>
+        </form>
+      </div>
+      <div class = "row">
+        <div class = "col-xs-12">
+          <a data-toggle="collapse" href="#collapse3" id = "collapse3">
+            <span class="glyphicon glyphicon-menu-up" aria-hidden="true" style = "color:black;font-size:18px"></span>
+          </a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+    <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+
+
+  </div>
+  <div class = "full-page" id = "saved_combinedArtbyte">
+    
+    <!--ArtBytes header-->
+    <div class = "container-fluid">
+      <div class = "page-header">
+        <div class = "col-xs-2">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" id = "to_gallery_with_combinedArtbyte"></span>
+        </div>
+        <div class = "col-xs-8">
+          <h4 id = "title_combinedHeader"></h4>
+        </div>
+        <div class = "col-xs-2">
+          <p id = "back_to_combineInfo">Edit</p>
+        </div>
+      </div>
+    </div>
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-xs-12">
+          <p id = "saved_combinedFeedback"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "container-fluid">
+      <img src = "" id = "combined_artbyte_saved"/>
+    </div>
+    <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
+    <div class = "container-fluid">
+      <div class = "row">
+        <hr>
+        <div class = "col-xs-1"></div>
+        <div class = "col-xs-2">
+          <p id = "label_down">Title</p>
+        </div>
+        <div class = "col-xs-8">
+          <p id = "title_combinedSaved"></p>
+        </div>
+        <div class = "col-xs-1"></div>
+      </div>
+      
+        <div class = "row">
+          <hr>
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-2">
+            <p id = "label_down">Location</p>
+          </div>
+          <div class = "col-xs-8">
+            <p id = "location_combinedSaved"></p>
+          </div>
+          <div class = "col-xs-1"></div>
+        </div>
+        <div class = "row">
+          <hr>
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-2">
+            <p id = "label_down">Artist</p>
+          </div>
+          <div class = "col-xs-8">
+            <p id = "artist_combinedSaved"></p>
+          </div>
+          <div class = "col-xs-1"></div>
+        </div>
+        <div class = "row">
+          <hr>
+          <div class = "col-xs-1"></div>
+          <div class = "col-xs-2">
+            <p id = "label_down">Description</p>
+          </div>
+          <div class = "col-xs-8">
+            <p id = "description_combinedSaved"></p>
+          </div>
+          <div class = "col-xs-1"></div>
+          
+        </div>
+      </div>
+
+
+    <div class = "line-gap" style = "height:15px"></div> <!--15px line gap-->
+    
+    <!--begin two buttons for combine and post as exhibition-->
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-xs-2"></div>
+        <div class = "col-xs-8">
+          <button class="btn btn-default" id = "from_combine_button_saved">Combine with Other ArtBytes</button>
+        </div>
+        <div class = "col-xs-2"></div>
+      </div>
+      <div class = "line-gap" style = "height:10px"></div> <!--10px line gap-->
+      <div class = "row">
+        <div class = "col-xs-2"></div>
+        <div class = "col-xs-8">
+          <button class="btn btn-default" id = "combined_exhibition_button_saved">Post as an Exhibition</button>
+        </div>
+        <div class = "col-xs-2"></div>
+      </div>
+    </div>
+        <div class = "line-gap" style = "height:30px"></div> <!--30px line gap-->
+
+  </div>
+  <div class = "full-page" id = "new_exhibition">
+    
+    <!--ArtBytes header-->
+    <div class = "container-fluid">
+      <div class = "page-header">
+        <div class = "col-xs-2">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" id = "back_from_exhibition"></span>
+        </div>
+        <div class = "col-xs-8">
+          <h4>Post as an Exhibition</h4>
+        </div>
+        <div class = "col-xs-2">
+          <p id = "submit_exhibition">Post</p>
+        </div>
+      </div>
+    </div>
+    <div class = "container-fluid">
+      <div id="container"></div>
+      <div class = "row" id = "artbytes_exhibition_preview">
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample4.png" id = "ex_ab1" onclick = "exhibition ('ex_ab1')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample2.png" id = "ex_ab2" onclick = "exhibition ('ex_ab2')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample3.png" id = "ex_ab3" onclick = "exhibition ('ex_ab3')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample1.png" id = "ex_ab4" onclick = "exhibition ('ex_ab4')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample5.png" id = "ex_ab5" onclick = "exhibition ('ex_ab5')"></img>
+        </div>
+        <div class = "col-xs-4" id = "new_artbyte_div1">
+          <img src = "images/artbytes/sample6.png" id = "ex_ab6" onclick = "exhibition ('ex_ab6')"></img>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <!--CUSTOM JAVASCRIPT FUNCTIONS-->
   <script>
-
+  var new_count = 0;
+  var new_artbyte = "new_artbyte_gallery" + new_count.toString();
+  var new_count1 = 0;
+  var new_artbyte1 = "new_artbyte_preview" + new_count1.toString();
+  var new_count2 = 0;
+  var new_artbyte2 = "new_combine_gallery" + new_count2.toString();
+  var new_count3 = 0;
+  var new_artbyte3 = "new_combine_preview" + new_count3.toString();
+//hide all screens except for homescreen_artbytes
   function init() {
-    $('#crop-image').toggle(); //hide
-    $('#image-cropped').toggle(); //hide
-    $('#edit-info').toggle(); //hide
-    $('#user-gallery').toggle(); //hide
-    $('#combine-artbytes').toggle(); //hide
-    $('#artbytes-gallery').toggle();
+      $('#homescreen_exhibition').toggle(); //hide
+      $('#camera_roll').toggle();
+      $('#crop_image').toggle();
+      $('#edit_info').toggle();
+      $('#saved_artbyte').toggle();
+      $('#combine_artbytes').toggle();
+      $('#combine_info').toggle();
+      $('#saved_combinedArtbyte').toggle(); 
+      $('#new_exhibition').toggle();
+
+    }
+
+//all button clicks; changing screens
+  $("#to_homescreen_exhibition").click(function () {
+       $('#homescreen_artbytes').toggle(); 
+       $('#homescreen_exhibition').toggle(); 
+    });
+  $("#to_homescreen_artbytes").click(function () {
+     $('#homescreen_artbytes').toggle(); 
+     $('#homescreen_exhibition').toggle(); 
+  });
+  $("#back_to_gallery").click(function () {
+     $('#camera_roll').toggle(); 
+     $('#crop_image').toggle();
+     
+      clickX=[]; 
+      clickY=[];  
+  });
+  $("#create_button").click(function () {
+     $('#homescreen_artbytes').toggle(); 
+     $('#camera_roll').toggle(); 
+  });
+  $("#combine_button").click(function () {
+     $('#homescreen_artbytes').toggle(); 
+     $('#combine_artbytes').toggle();
+     canvas_combine.width = canvas_combine.width; 
+  });
+  $("#back_homescreen_artbytes").click(function () {
+   $('#homescreen_artbytes').toggle(); 
+   $('#camera_roll').toggle(); 
+  });
+  
+  $("#back_to_crop").click(function () {
+    $('#crop_image').toggle(); 
+   $('#edit_info').toggle();  
+  });
+  $("#back_to_combine").click(function () {
+    $('#combine_info').toggle(); 
+   $('#combine_artbytes').toggle(); 
+  });
+
+  //exhibition AR JS
+
+
+  $('#combined_exhibition_button_saved').click(function () {
+    $('#new_exhibition').toggle();
+    $('#saved_combinedArtbyte').toggle();
+    begin_exhibition(document.getElementById('combined_artbyte_saved'));
+  });
+  $('#exhibition_button_saved').click(function () {
+    $('#new_exhibition').toggle();
+    $('#saved_artbyte').toggle();
+    begin_exhibition(document.getElementById('myimg_cropped_saved'));
+  });
+
+  function exhibition (to_exhibition) {
+    var place_this = document.getElementById(to_exhibition);
+    console.log(place_this.src);
+
+
   }
 
-  $("#to-newsfeed").click(function () {
-     $('#crop-image').toggle(); //hide crop page
-     $('#newsfeed').toggle(); //show newsfeed
-     $('#modal-popup').toggle(); //hide popup
+  $('#exhibition_button').click(function () {
+    $('#homescreen_exhibition').toggle();
+    $('#new_exhibition').toggle();
+    begin_exhibition(document.getElementById('ex_ab1'));
+  });
+  
+  function begin_exhibition (image_path){
+
+
+    var btn = document.createElement("BUTTON");        // Create a <button> element
+        var t = document.createTextNode("CLICK ME");       // Create a text node
+        btn.appendChild(t);    
+        btn.style.zIndex = "10";
+        btn.style.marginTop = "120%"; 
+        btn.style.marginLeft = "40%";
+        btn.style.width = ""                             // Append the text to <button>
+        document.body.appendChild(btn);   
+      awe.init({
+      device_type: awe.AUTO_DETECT_DEVICE_TYPE,
+      settings: {
+        container_id: 'container',
+        default_camera_position: { x:0, y:0, z:0 },
+        default_lights:[
+          {
+            id: 'point_light',
+            type: 'point',
+            color: 0xFFFFFF,
+          },
+        ],
+      },
+      ready: function() {
+        awe.util.require([
+          {
+            capabilities: ['gum','webgl'],
+            files: [ 
+              [ 'js/ar/awe-standard-dependencies.js', 'js/ar/awe-standard.js'],
+              'js/ar/awe-jsartoolkit-dependencies.js',
+              'js/ar/awe.marker_ar.js',
+            ],
+            success: function() { 
+              awe.setup_scene();      
+              awe.pois.add({ id:'poi_1', position: { x:0, y:0, z:0 }, visible: false });
+              awe.projections.add({ 
+                id:'projection_1', 
+                geometry: { shape: 'plane', height:image_path.height, width:image_path.width },
+                material:{ type: 'phong', color: 0xFFFFFF, transparent:true}, 
+                texture: { path: image_path.src },
+              }, { poi_id: 'poi_1' });
+
+              awe.events.add([{
+                id: 'ar_tracking_marker',
+                device_types: {
+                  pc: 1,
+                  android: 1
+                },
+                register: function(handler) {
+                  window.addEventListener('ar_tracking_marker', handler, false);
+
+                },
+                unregister: function(handler) {
+                  window.removeEventListener('ar_tracking_marker', handler, false);
+                },
+                handler: function(event) {
+                  if (event.detail) {
+                    if (event.detail['64']) { // we are mapping marker #64 to this projection
+                      awe.pois.update({
+                        data: {
+                          visible: true,
+                          position: { x:0, y:0, z:0 },
+                          matrix: event.detail['64'].transform
+                        },
+                        where: {
+                          id: 'poi_1'
+                        }
+                      });
+                      // document.getElementById('container').style.border = 'solid';
+                      // document.getElementById('container').style.borderColor = 'green';
+                    }
+                    else {
+                      awe.pois.update({
+                        data: {
+                          visible: false
+                        },
+                        where: {
+                          id: 'poi_1'
+                        }
+                      });
+                      // document.getElementById('container').style.border = 'solid';
+                      // document.getElementById('container').style.borderColor = 'red';
+                    }
+                    awe.scene_needs_rendering = 1;
+                  }
+                }
+              }])
+            },
+          },
+          {
+            capabilities: [],
+            success: function() { 
+              document.body.innerHTML = '<p>Try this demo in the latest version of Chrome or Firefox on a PC or Android device</p>';
+            },
+          },
+        ]);
+      }
+    });
+  }
+
+
+
+
+  $("#save_to_savedCombinedArtBytes").click(function () {
+    $('#combine_info').toggle(); 
+    $('#saved_combinedArtbyte').toggle();  
+    thePreview2 = document.getElementById("artbytes_preview");
+    var oDiv2 = document.createElement("div");
+    oDiv2.setAttribute('class', 'col-xs-4');
+    oDiv2.setAttribute('id', 'new_combine_div_preview');
+    new_count2 += 1;
+    new_combine_img_preview = "new_combine_preview" + new_count2.toString();
+    thePreview2.insertBefore(oDiv2, thePreview2.firstChild);
+    var oImg2 = document.createElement("img");
+    oImg2.setAttribute('src', document.getElementById('combined_artbyte').src);
+    oImg2.setAttribute('id', new_combine_img_preview);
+    
+    oDiv2.insertBefore(oImg2, oDiv2.firstChild);
+    oImg2.setAttribute('onclick', "onCanvas(new_combine_img_preview)");
+    theGallery2 = document.getElementById("artbytes_gallery");
+    var oDiv3 = document.createElement("div");
+    oDiv3.setAttribute('class', 'col-xs-4');
+    oDiv3.setAttribute('id', 'new_combine_div_gallery');
+    new_count3 += 1;
+    new_combine_div_gallery = "new_combine_div_gallery" + new_count3.toString();
+    theGallery2.insertBefore(oDiv3, theGallery2.firstChild);
+    var oImg3 = document.createElement("img");
+    oImg3.setAttribute('src', document.getElementById('combined_artbyte').src);
+    oImg3.setAttribute('id', new_combine_div_gallery);
+    oDiv3.insertBefore(oImg3, oDiv3.firstChild);
+    oImg3.setAttribute('onclick', "getArtByteInfo(new_combine_div_gallery)");
+    document.getElementById('combined_artbyte_saved').src = document.getElementById('combined_artbyte').src;
+    if (document.getElementById('title_combinedInput').value =="") {
+      document.getElementById('title_combinedHeader').innerHTML = "Untitled 01";
+      document.getElementById('saved_combinedFeedback').innerHTML = "Untiled 01 has been saved!";
+    }
+    else {
+      document.getElementById('title_combinedHeader').innerHTML = document.getElementById('title_combinedInput').value; 
+      document.getElementById('saved_combinedFeedback').innerHTML = document.getElementById('title_combinedInput').value + " has been saved!";
+    } 
+    document.getElementById('saved_combinedFeedback').innerHTML = document.getElementById('title_combinedInput').value + " has been saved!";
+    document.getElementById('title_combinedSaved').innerHTML = document.getElementById('title_combinedInput').value;  
+    document.getElementById('location_combinedSaved').innerHTML = document.getElementById('loc_combinedInput').value;  
+    document.getElementById('artist_combinedSaved').innerHTML = document.getElementById('artist_combinedInput').value;
+  });
+  $("#save_to_savedArtByte").click(function () {
+    $('#saved_artbyte').toggle(); 
+    $('#edit_info').toggle();
+    document.getElementById('myimg_cropped_saved').src = polyClip0.toDataURL();
+    if (document.getElementById('title_input').value == ""){
+      document.getElementById('title_header').innerHTML = "Untitled 01";  
+      document.getElementById('saved_feedback').innerHTML = "Untitled 01 has been saved!";
+    }
+    else{
+      document.getElementById('title_header').innerHTML = document.getElementById('title_input').value;  
+      document.getElementById('saved_feedback').innerHTML = document.getElementById('title_input').value + " has been saved!"; 
+    }
+    document.getElementById('title_saved').innerHTML = document.getElementById('title_input').value;  
+    document.getElementById('location_saved').innerHTML = document.getElementById('loc_input').value;  
+    document.getElementById('artist_saved').innerHTML = document.getElementById('artist_input').value; 
+    thePreview = document.getElementById("artbytes_preview");
+    var oDiv1 = document.createElement("div");
+    oDiv1.setAttribute('class', 'col-xs-4');
+    oDiv1.setAttribute('id', 'new_artbyte_div_preview');
+
+    new_count += 1;
+    new_artbyte_img_preview = "new_artbyte_preview" + new_count1.toString();
+    thePreview.insertBefore(oDiv1, thePreview.firstChild);
+    var oImg1 = document.createElement("img");
+    oImg1.setAttribute('src', document.getElementById('myimg_cropped_saved').src);
+    oImg1.setAttribute('id', new_artbyte_img_preview);
+    //console.log(new_artbyte_img_preview);
+    
+    oDiv1.insertBefore(oImg1, oDiv1.firstChild);
+    oImg1.setAttribute('onclick', "onCanvas(new_artbyte_img_preview)");
+    theGallery = document.getElementById("artbytes_gallery");
+    var oDiv = document.createElement("div");
+    oDiv.setAttribute('class', 'col-xs-4');
+    oDiv.setAttribute('id', 'new_artbyte_div');
+    new_count += 1;
+    new_artbyte_div = "new_artbyte_gallery" + new_count.toString();
+    theGallery.insertBefore(oDiv, theGallery.firstChild);
+    var oImg = document.createElement("img");
+    oImg.setAttribute('src', document.getElementById('myimg_cropped_saved').src);
+    oImg.setAttribute('id', new_artbyte);
+    oDiv.insertBefore(oImg, oDiv.firstChild);
+    oImg.setAttribute('onclick', "getArtByteInfo(new_artbyte_div)");
+  });
+  $("#combine_back_homescreen_artbytes").click(function () {
+    $('#homescreen_artbytes').toggle(); 
+    $('#combine_artbytes').toggle();
+
   });
 
-  $("#generate").click (function () {
-    $('#crop-image').toggle();
-    $('#edit-info').toggle();
-    document.getElementById("cropped_image").src = document.getElementById("myimg").src;
+  $("#combine_button_saved").click(function () {
+    $('#saved_artbyte').toggle(); 
+    $('#combine_artbytes').toggle();
+    canvas_combine.width = canvas_combine.width; 
+    
+    onCanvas('myimg_cropped_saved');
+
+  });
+$("#from_combine_button_saved").click(function () {
+    $('#saved_combinedArtbyte').toggle(); 
+    $('#combine_artbytes').toggle();
+    // canvas_combine.width = canvas_combine.width; 
+    // thePreview = document.getElementById("artbytes_preview");
+    // var oDiv1 = document.createElement("div");
+    // oDiv1.setAttribute('class', 'col-xs-4');
+    // oDiv1.setAttribute('id', 'new_artbyte_div1');
+    // new_count += 1;
+    // new_artbyte_div1 = "new_artbyte_gallery1" + new_count1.toString();
+    // thePreview.insertBefore(oDiv1, thePreview.firstChild);
+    // var oImg1 = document.createElement("img");
+    // oImg1.setAttribute('src', document.getElementById('myimg_cropped_saved').src);
+    // oImg1.setAttribute('id', new_artbyte1);
+    // oDiv1.insertBefore(oImg1, oDiv1.firstChild);
+    // onCanvas('myimg_cropped_saved');
+
   });
 
-    $("#to-cropImage").click(function () {
-     $('#crop-image').toggle(); 
-     $('#image-cropped').toggle(); 
+  $("#to_gallery_with_combinedArtbyte").click(function () {
+    $('#homescreen_artbytes').toggle(); 
+    $('#saved_combinedArtbyte').toggle();
+    
+  });
+  $("#back_to_combineInfo").click(function () {
+    $('#saved_combinedArtbyte').toggle(); 
+    $('#combine_info').toggle();
+  });
+  $('#to_gallery_with_artbyte').click(function () {
+    $('#saved_artbyte').toggle(); 
+    $('#homescreen_artbytes').toggle(); 
+    
+
+
   });
 
-    $("#to-gallery").click(function () {
-     $('#user-gallery').toggle(); 
-     $('#image-cropped').toggle(); 
-     document.getElementById("new-artbyte").src = document.getElementById("cropped_image").src;
+  $("#to_combine_info").click(function () {
+    $('#combine_artbytes').toggle(); 
+    $('#combine_info').toggle();
+    var image = new Image();
+    image.id = "pic";
+    document.getElementById('combined_artbyte').src = canvas_combine.toDataURL();
+    //.appendChild(image);
+    // var dataURL = combine_canvas.toDataURL(); 
+    // document.getElementById('combined_artbyte').src = dataURL; 
   });
 
-    $("#to-exhibition").click(function () {
-      $('#newsfeed').toggle();
-      $('#user-gallery').toggle(); //CHANGE ONCE AR IS INCLUDED
+  $("#expand").click(function () { //collapse & expand: edit artbyte info
+    $('#expand').toggle();  
+  });
+  $("#collapse").click(function () {
+    $('#expand').toggle();  
+  });
+  $("#expand2").click(function () { //collapse2 & expand2: view artbyte info
+    $('#expand2').toggle();  
+  });
+  $("#collapse2").click(function () {
+    $('#expand2').toggle();  
+  });
+  $("#collapse3").click(function () { //collapse3 & expand3, edit combination info
+    $('#expand3').toggle();  
+  });
+  $("#expand3").click(function () {
+    $('#expand3').toggle();  
+  });
+  $("#collapse4").click(function () { //collapse4 & expand4, view combination info
+    $('#expand4').toggle();  
+  });
+  $("#expand4").click(function () {
+    $('#expand4').toggle();  
+  });
+  $("#back_to_info").click(function () {
+    $('#saved_artbyte').toggle(); 
+   $('#edit_info').toggle();  
+  });
 
 
-    });
-  $("#to-crop").click(function () {
-      $('#edit-info').toggle();
-      $('#crop-image').toggle(); 
+//function to open artbyte/composition from artbyte gallery
+
+function getArtByteInfo (this_id) {
+  console.log("it clicked");
+  $('#homescreen_artbytes').toggle();
+  $('#saved_artbyte').toggle();
+  var artbyte_source = new Image ();
+  artbyte_source.src = document.getElementById(this_id).src;
+  artbyte_source.id = this_id;
+
+  console.log(artbyte_source);
+  document.getElementById('myimg_cropped_saved').src = artbyte_source.src;
+  document.getElementById('title_header').innerHTML = "Temp_Title";
+  document.getElementById('title_saved').innerHTML = "Temp_Title";  
+  document.getElementById('location_saved').innerHTML = "Temp_Location";  
+  document.getElementById('artist_saved').innerHTML = "Temp_Artist"; 
+  console.log(artbyte_source);
+  $(".clipParent").empty();
+  $(".clipParent").prepend(artbyte_source);
+  // document.getElementById('temp_edit').src = artbyte_source;
+  document.getElementById('saved_feedback').innerHTML = "";
+  canvas.width = canvas.width;
+  context.drawImage(artbyte_source,0,0);
 
 
-    });
-    $("#to-artbytes-gallery").click(function () {
-      $('#combine-artbytes').toggle();
-      $('#artbytes-gallery').toggle(); 
+}
+
+//function to get camera gallery image and use it for cropping
+var imageObj = new Image();
+
+function crop_this (gallery_image) {
+    canvas.width = canvas.width;
+    console.log("getting new image");
+    
+    imageObj.onload = function() {
+    $(canvas).attr({width : this.width, height: this.height});
+      context.drawImage(imageObj,0,0); 
+    }; 
+  imageObj.src =  document.getElementById(gallery_image).src;
 
 
-    });
+  $('#camera_roll').toggle();
+  $('#crop_image').toggle();
+  init_cropping ();
+}
 
-    $("#to-combine").click(function () {
-      $('#edit-info').toggle();
-      $('#combine-artbytes').toggle(); 
-      document.getElementById("combine-image").src = document.getElementById("cropped_image").src;
-      document.getElementById("saved-text").innerHTML = "The " + document.getElementById("title_input").value + " has been saved!";
+//take image and get image function
+ document.getElementById('myFileInput').onchange = function (evt) {
+    var tgt = evt.target || window.event.srcElement,
+        files = tgt.files;
 
+    // FileReader support
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onload = function () {
+       
+          imageObj.onload = function() {
+            console.log("it loaded")
+              $(canvas).attr({width : 300, height: 500});
+                context.drawImage(imageObj,0,0, 300, 450); 
+                
+          
+               
+              }; 
+              console.log("not loaded")
+          imageObj.src =  fr.result;
 
+        }
+    fr.readAsDataURL(files[0]);
 
-    });
-      $("#to-home").click(function () {
-        $('#combine-artbytes').toggle();
-        $('#newsfeed').toggle(); 
-        $('#modal-popup').toggle();
-
-    });
-
-      $("#icon-newsfeed").click(function () {
-        $('#user-gallery').toggle();
-        $('#newsfeed').toggle(); 
-        //$('#modal-popup').toggle();
-
-    });
-   $("#back-combine").click(function () {
-        $('#artbytes-gallery').toggle();
-        $('#combine-artbytes').toggle(); 
-        
-
-    });
-      $("#icon-profile").click(function () {
-        $('#user-gallery').toggle();
-        $('#newsfeed').toggle(); 
-        
-
-    });
-
-
-
-    //console.log("in js");
-  document.getElementById('myFileInput').onchange = function (evt) {
+    }
+    $('#camera_roll').toggle();
+    $('#crop_image').toggle();
+    init_cropping ();
+    
+  }
+  document.getElementById('myFileInput2').onchange = function (evt) {
     var tgt = evt.target || window.event.srcElement,
         files = tgt.files;
 
@@ -624,15 +1235,192 @@
         var fr = new FileReader();
         fr.onload = function () {
             document.getElementById("myimg").src = fr.result;
+
         }
         fr.readAsDataURL(files[0]);
     }
-    $('#newsfeed').toggle();
-    $('#crop-image').toggle();
     
   }
-  </script>  
-   
+
+//combine draw to canvas functions
+var selected_artbyte = new Image ();
+var combineDiv = document.getElementById('combine_canvas');
+canvas_combine = document.createElement('canvas');
+canvas_combine.setAttribute('id', 'canvas_combine'); 
+canvas_combine.setAttribute('width', 229); 
+canvas_combine.setAttribute('height', 300); 
+$(combineDiv).prepend(canvas_combine); 
+  if(typeof G_vmlCanvasManager != 'undefined') { 
+      canvas_combine = G_vmlCanvasManager.initElement(canvas_combine); 
+  } 
+    
+var context_new = canvas_combine.getContext('2d'); 
+var new_xLoc = Math.random() * (170 - 0) + 0;
+var new_yLoc = Math.random() * (250 - 0) + 0;
+  function onCanvas (artbyte) {
+    console.log(document.getElementById(artbyte));
+    context_new.drawImage(document.getElementById(artbyte),new_xLoc,new_yLoc); 
+    new_xLoc = Math.random() * (170 - 0) + 0;
+    new_yLoc = Math.random() * (250 - 0) + 0;
+    
+
+  }
+  var removeBlanks = function (imgWidth, imgHeight) {
+    console.log("in remove white space");
+    var imageData = context_new.getImageData(0, 0, canvas_combine.width, canvas_combine.height),
+             data = imageData.data,
+           getRBG = function(x, y) {
+                      return {
+                        red:   data[(imgWidth*y + x) * 4],
+                        green: data[(imgWidth*y + x) * 4 + 1],
+                        blue:  data[(imgWidth*y + x) * 4 + 2]
+                      };
+                    },
+          isWhite = function (rgb) {
+                      return rgb.red == 255 && rgb.green == 255 && rgb.blue == 255;
+                    },
+            scanY = function (fromTop) {
+                      var offset = fromTop ? 1 : -1;
+
+                      // loop through each row
+                      for(var y = fromTop ? 0 : imgHeight - 1; fromTop ? (y < imgHeight) : (y > -1); y += offset) {
+
+                        // loop through each column
+                        for(var x = 0; x < imgWidth; x++) {
+                            if (!isWhite(getRBG(x, y))) {
+                                return y;                        
+                            }      
+                        }
+                    }
+                    return null; // all image is white
+                },
+            scanX = function (fromLeft) {
+                      var offset = fromLeft? 1 : -1;
+
+                      // loop through each column
+                      for(var x = fromLeft ? 0 : imgWidth - 1; fromLeft ? (x < imgWidth) : (x > -1); x += offset) {
+
+                        // loop through each row
+                        for(var y = 0; y < imgHeight; y++) {
+                            if (!isWhite(getRBG(x, y))) {
+                                return x;                        
+                            }      
+                        }
+                    }
+                    return null; // all image is white
+                };
+
+
+        var cropTop = scanY(true),
+            cropBottom = scanY(false),
+            cropLeft = scanX(true),
+            cropRight = scanX(false);
+    // cropTop is the last topmost white row. Above this row all is white
+    // cropBottom is the last bottommost white row. Below this row all is white
+    // cropLeft is the last leftmost white column.
+    // cropRight is the last rightmost white column.
+};
+
+//cropping functions
+  var canvasDiv = document.getElementById('canvasDiv'); 
+  canvas = document.createElement('canvas'); 
+  canvas.setAttribute('id', 'canvas'); 
+  canvas.setAttribute('crossOrigin', "Anonymous");
+  $(canvasDiv).prepend(canvas); 
+  if(typeof G_vmlCanvasManager != 'undefined') { 
+      canvas = G_vmlCanvasManager.initElement(canvas); 
+  } 
+    
+  var context = canvas.getContext('2d'); 
+  
+    
+  var clickX = new Array(); 
+  var clickY = new Array(); 
+  var clickDrag = new Array(); 
+  console.log("created arrays");
+  var paint; 
+    
+  function addClick(x, y, dragging) 
+  { 
+      console.log("added clicks");
+      clickX.push(x); 
+      clickY.push(y); 
+      clickDrag.push(dragging); 
+  } 
+    
+  function redraw(){ 
+      //canvas.width = canvas.width; // Clears the canvas 
+      //context.drawImage(imageObj,0,0); 
+      context.strokeStyle = "#df4b26"; 
+      context.lineJoin = "round"; 
+      context.lineWidth = 5; 
+                
+      for(var i=0; i < clickX.length; i++) 
+      { 
+        context.beginPath(); 
+        context.arc(clickX[i], clickY[i], 3, 0, 2 * Math.PI, false); 
+        context.fillStyle = '#ffffff'; 
+        context.fill(); 
+        context.lineWidth = 5; 
+        context.stroke(); 
+      } 
+  } 
+    
+
+function touchHandler(event) {
+        //get a reference to our coordinates div
+        //var coords = document.getElementById("coords");
+        //write the coordinates of the touch to the div
+        //coords.innerHTML = 'x: ' + event.touches[0].pageX + 'y: ' + event.touches[0].pageY;
+        //coordStr += " " + event.touches[0].pageX + "," + event.touches[0].pageY; 
+        //console.log(coordStr);
+      console.log("in touchhandler")
+      var amount_left = document.getElementById("canvas").style.marginLeft;
+      console.log(document.getElementById("canvas").style.marginLeft);
+      addClick(event.touches[0].pageX - 88, event.touches[0].pageY - this.offsetTop); 
+
+      redraw(); 
+  } 
+  function init_cropping () {
+    console.log("started cropping")
+        var touchzone = document.getElementById("canvasDiv");
+        touchzone.addEventListener("touchstart", touchHandler, false);
+        touchzone.addEventListener("touchmove", touchHandler, false);
+       //   document.ontouchstart = function(e){ 
+       //     e.preventDefault(); 
+       // }
+        console.log('Init');
+
+      }
+  $("#next_to_info").click(function () {
+ 
+     var cropped_image = new Image();
+     //console.log(imageObj.src);
+     cropped_image.setAttribute('src', imageObj.src);
+     cropped_image.setAttribute('id', 'genimg');
+      $(".clipParent").empty(); 
+      $(".clipParent").prepend(cropped_image);
+        console.log("hello");
+        var arr = []; 
+        for(var i=0; i < clickX.length; i++){ 
+            arr.push(clickX[i]); 
+            arr.push(clickY[i]); 
+      } 
+     // console.log(imageObj.src);
+      $("#genimg")[0].setAttribute("data-polyclip",arr.join(", ")); 
+      clickX=[]; 
+      clickY=[]; 
+      redraw(); 
+      polyClip.init();
+      removeBlanks(document.getElementById('genimg').width, document.getElementById('genimg').height);
+      console.log("here");
+      
+      $('#crop_image').toggle(); 
+      $('#edit_info').toggle();
+  });
+
+
+  </script>
     <script src="js/bootstrap.min.js"></script>
     <script src = "js/cropping.js"></script>
   </body>
