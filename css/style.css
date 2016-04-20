@@ -51,7 +51,7 @@ label {
 
 /**IDs**/
 
-#ab1, #ab2, #ab3, #ab4, #ab5, #ab6, #ex_ab1, #ex_ab2, #ex_ab3, #ex_ab4, #ex_ab5, #ex_ab6, #new_artbyte_preview0, #new_combine_preview0, #new_combine_preview1, #new_combine_preview2, #new_combine_preview3, #new_combine_div_gallery0, #new_combine_div_gallery3, #new_combine_div_gallery1, #new_combine_div_gallery2,  #new_artbyte_preview1, #new_artbyte_preview2, #new_artbyte_preview3, #new_artbyte_gallery0, #new_artbyte1, #new_artbyte_gallery1, #new_artbyte_gallery2, #new_artbyte_gallery3, #new_artbyte_gallery4 {
+#ab0, #ab1, #ab2, #ab3, #ab4, #ab5, #ab6, #ex_ab1, #ex_ab2, #ex_ab3, #ex_ab4, #ex_ab5, #ex_ab6, #new_artbyte_preview0, #new_combine_preview0, #new_combine_preview1, #new_combine_preview2, #new_combine_preview3, #new_combine_div_gallery0, #new_combine_div_gallery3, #new_combine_div_gallery1, #new_combine_div_gallery2,  #new_artbyte_preview1, #new_artbyte_preview2, #new_artbyte_preview3, #new_artbyte_gallery0, #new_artbyte1, #new_artbyte_gallery1, #new_artbyte_gallery2, #new_artbyte_gallery3, #new_artbyte_gallery4 {
 	max-height:90px;
 	max-width: 100%;
 	display:block;
@@ -69,7 +69,7 @@ label {
     background-color:#6E6E6E;
 }
 
-#new_artbyte_div1, #new_artbyte_div_preview, #new_combine_div_preview, #new_combine_div_gallery, #new_artbyte_div {
+#new_artbyte_div1, #camera_icon, #new_artbyte_div_preview, #new_combine_div_preview, #new_combine_div_gallery, #new_artbyte_div {
 	height:90px;
 	    margin-bottom:30px;
 }
@@ -98,7 +98,7 @@ label {
 	position: fixed;
 }
 
-#canvas {
+#canvas, #canvasDup {
 	display:block;
 	margin:auto;
 }
@@ -168,7 +168,7 @@ label {
 
 
 
-#next_to_info, #back_from_exhibition, #submit_exhibition, #back_to_gallery_icon, #save_to_savedArtByte, #to_gallery_with_artbyte, #back_to_info, #combine_back_homescreen_artbytes, #to_combine_info, #back_to_combine, #save_to_savedCombinedArtBytes, #to_gallery_with_combinedArtbyte, #back_to_combineInfo {
+#next_to_info, #back_from_exhibition, #back_to_view, #save_to_homescreen, #submit_exhibition, #back_to_gallery_icon, #save_to_savedArtByte, #to_gallery_with_artbyte, #back_to_info, #combine_back_homescreen_artbytes, #to_combine_info, #back_to_combine, #save_to_savedCombinedArtBytes, #to_gallery_with_combinedArtbyte, #back_to_combineInfo {
 	color:white;
 	padding-top:15px;
 }
@@ -206,7 +206,7 @@ label {
 	padding-top:15px;
 }
 
-#expand, #collapse, #expand2, #collapse2, #collapse3, #expand3, #expand4, #collapse4 {
+#expand, #collapse, #expand2, #collapse2, #collapse3, #expand3, #expand4, #collapse4, #collapse5, #expand5 {
 	text-align: center;
 	margin-top: 10px
 }
