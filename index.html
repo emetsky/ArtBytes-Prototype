@@ -16,6 +16,7 @@
      <script src = "js/polyclip-p.js"></script>
      <script type="text/javascript" src="js/ar/awe-loader-min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
  
   </head>
 
@@ -57,7 +58,7 @@
     </div>
 
     <div class = "line-gap" style = "height:20px"></div> <!--20px line gap-->
-
+    <p id = "saved_feedback"></p>
     <!--remainder of page-->
     <div class = "container-fluid" id = "page_margins">
       <!--top buttons for create and combine-->
@@ -1011,6 +1012,12 @@
      $('#homescreen_artbytes').toggle(); 
      $('#camera_roll').toggle(); 
   });
+
+  $('#back_from_exhibition').click(function () {
+    ('#homescreen_artbytes').toggle();
+    ('#new_exhibition').toggle();
+  });
+
   $("#combine_button").click(function () {
      $('#homescreen_artbytes').toggle(); 
      $('#combine_artbytes').toggle();
@@ -1170,11 +1177,12 @@
   }
 
 
-
+  
 
   $("#save_to_savedCombinedArtBytes").click(function () {
     $('#combine_info').toggle(); 
-    $('#homescreen_artbytes').toggle();  
+    $('#homescreen_artbytes').toggle();
+    document.getElementById('saved_feedback').innerHTML = "Your ArtByte has been saved!";
     thePreview2 = document.getElementById("artbytes_preview");
     var oDiv2 = document.createElement("div");
     oDiv2.setAttribute('class', 'col-xs-4');
@@ -1205,7 +1213,7 @@
   $("#save_to_savedArtByte").click(function () {
     $('#edit_info').toggle(); 
     $('#homescreen_artbytes').toggle();
-   
+    document.getElementById('saved_feedback').innerHTML = "Your ArtByte has been saved!";
     
     thePreview = document.getElementById("artbytes_preview");
     var oDiv1 = document.createElement("div");
@@ -1231,7 +1239,7 @@
     theGallery.insertBefore(oDiv, theGallery.firstChild);
     var oImg = document.createElement("img");
     oImg.setAttribute('src', polyClip0.toDataURL());
-    oImg.setAttribute('id', new_artbyte);
+    oImg.setAttribute('id', new_artbyte_div);
     oDiv.insertBefore(oImg, oDiv.firstChild);
     oImg.setAttribute('onclick', "getArtByteInfo(new_artbyte_div)");
 
@@ -1566,7 +1574,7 @@ var new_yLoc = Math.random() * (250 - 0) + 0;
   } 
     
   var context = canvas.getContext('2d'); 
-  
+  var every_three = 0;
     
   var clickX = new Array(); 
   var clickY = new Array(); 
@@ -1583,21 +1591,25 @@ var new_yLoc = Math.random() * (250 - 0) + 0;
   } 
     
   function redraw(){ 
+      
       //canvas.width = canvas.width; // Clears the canvas 
       //context.drawImage(imageObj,0,0); 
-      context.strokeStyle = "#df4b26"; 
-      context.lineJoin = "round"; 
-      context.lineWidth = 5; 
-                
-      for(var i=0; i < clickX.length; i++) 
-      { 
-        context.beginPath(); 
-        context.arc(clickX[i], clickY[i], 3, 0, 2 * Math.PI, false); 
-        context.fillStyle = '#ffffff'; 
-        context.fill(); 
+      
+        context.strokeStyle = "#df4b26"; 
+        context.lineJoin = "round"; 
         context.lineWidth = 5; 
-        context.stroke(); 
-      } 
+                  
+        for(var i=0; i < clickX.length; i++) 
+        { 
+          context.beginPath(); 
+          context.arc(clickX[i], clickY[i], 3, 0, 2 * Math.PI, false); 
+          context.fillStyle = '#ffffff'; 
+          context.fill(); 
+          context.lineWidth = 5; 
+          context.stroke(); 
+        } 
+       
+     
   } 
     
 
@@ -1611,9 +1623,15 @@ function touchHandler(event) {
       console.log("in touchhandler")
       var amount_left = document.getElementById("canvas").style.marginLeft;
       console.log(document.getElementById("canvas").style.marginLeft);
-      addClick(event.touches[0].pageX - 88, event.touches[0].pageY - this.offsetTop); 
-
+      every_three += 1;
+      if (every_three == 5){
+        addClick(event.touches[0].pageX - 88, event.touches[0].pageY - this.offsetTop);
+        
+        every_three = 0;
+      }
       redraw(); 
+
+      
   } 
   function init_cropping () {
     console.log("started cropping")
