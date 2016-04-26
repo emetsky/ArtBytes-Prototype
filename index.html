@@ -1211,8 +1211,8 @@
 
   });
   $("#save_to_savedArtByte").click(function () {
-    $('#edit_info').toggle(); 
-    $('#homescreen_artbytes').toggle();
+     $('#edit_info').toggle(); 
+     $('#homescreen_artbytes').toggle();
     document.getElementById('saved_feedback').innerHTML = "Your ArtByte has been saved!";
     
     thePreview = document.getElementById("artbytes_preview");
@@ -1242,9 +1242,72 @@
     oImg.setAttribute('id', new_artbyte_div);
     oDiv.insertBefore(oImg, oDiv.firstChild);
     oImg.setAttribute('onclick', "getArtByteInfo(new_artbyte_div)");
-
+     
 
   });
+  
+  function drag () {
+         var img = new Image();
+    img.onload = function(){
+        ctx.drawImage(img, 0,0);
+    };
+    img.src = polyClip0.toDataURL();
+    console.log("dragging1")
+    var canvas1 = document.getElementById("polyClip0");
+    var ctx=canvas1.getContext("2d");
+    var canvasOffset1=$("#polyClip0").offset();
+    var offsetX1=canvasOffset1.left;
+    var offsetY1=canvasOffset1.top;
+    var canvasWidth=canvas1.width;
+    var canvasHeight=canvas1.height;
+    var isDragging=false;
+
+    function dragstart(e){
+      console.log("start");
+      canMouseX=parseInt(e.touches[0].pageX-offsetX1);
+      canMouseY=parseInt(e.touches[0].pageY-offsetY1);
+      // set the drag flag
+      isDragging=true;
+    }
+
+    function dragend(e){
+      console.log("end");
+      canMouseX=parseInt(e.touches[0].pageX-offsetX1);
+      canMouseY=parseInt(e.touches[0].pageY-offsetY1);
+      // clear the drag flag
+      isDragging=false;
+    }
+
+    function dragcancel(e){
+      console.log("cancel");
+      canMouseX=parseInt(e.touches[0].pageX-offsetX1);
+      canMouseY=parseInt(e.touches[0].pageY-offsetY1);
+      // user has left the canvas, so clear the drag flag
+      isDragging=false;
+    }
+
+    function dragmove(e){
+      console.log("move");
+      canMouseX=parseInt(e.touches[0].pageX-offsetX1);
+      canMouseY=parseInt(e.touches[0].pageY-offsetY1);
+      // if the drag flag is set, clear the canvas and draw the image
+      if(isDragging){
+          console.log("dragging");
+
+          ctx.clearRect(0,0,canvasWidth,canvasHeight);
+          ctx.drawImage(img,canMouseX-128/2,canMouseY-120/2,128,120);
+      }
+    }
+    
+    var dragzone = document.getElementById("polyClip0");
+    console.log(dragzone);
+    dragzone.addEventListener("touchstart", dragstart, false);
+    dragzone.addEventListener("touchmove", dragmove, false);
+    dragzone.addEventListener("touchend", dragend, false);
+    dragzone.addEventListener("touchcancel", dragcancel, false);
+
+  }
+
 
 
   $("#combine_back_homescreen_artbytes").click(function () {
@@ -1620,12 +1683,16 @@ function touchHandler(event) {
         //coords.innerHTML = 'x: ' + event.touches[0].pageX + 'y: ' + event.touches[0].pageY;
         //coordStr += " " + event.touches[0].pageX + "," + event.touches[0].pageY; 
         //console.log(coordStr);
+      var canvasOffset=$("#canvas").offset();
+      var offsetX=canvasOffset.left;
+      console.log(offsetX);
+      var offsetY=canvasOffset.top;
       console.log("in touchhandler")
       var amount_left = document.getElementById("canvas").style.marginLeft;
       console.log(document.getElementById("canvas").style.marginLeft);
       every_three += 1;
       if (every_three == 5){
-        addClick(event.touches[0].pageX - 88, event.touches[0].pageY - this.offsetTop);
+        addClick(event.touches[0].pageX - offsetX, event.touches[0].pageY - offsetY);
         
         every_three = 0;
       }
@@ -1647,9 +1714,13 @@ function touchHandler(event) {
   $("#next_to_info").click(function () {
  
      var cropped_image = new Image();
-     //console.log(imageObj.src);
+     // imageObj.style.width = '50%';
+     // imageObj.style.height = '50%';
      cropped_image.setAttribute('src', imageObj.src);
      cropped_image.setAttribute('id', 'genimg');
+     // cropped_image.setAttribute('width', 100);
+     // cropped_image.setAttribute('height', 100);
+
       $(".clipParent").empty(); 
       $(".clipParent").prepend(cropped_image);
         console.log("hello");
@@ -1658,7 +1729,7 @@ function touchHandler(event) {
             arr.push(clickX[i]); 
             arr.push(clickY[i]); 
       } 
-     // console.log(imageObj.src);
+     // console.log(imageObj.src); 
       $("#genimg")[0].setAttribute("data-polyclip",arr.join(", ")); 
       clickX=[]; 
       clickY=[]; 
@@ -1669,6 +1740,8 @@ function touchHandler(event) {
       
       $('#crop_image').toggle(); 
       $('#edit_info').toggle();
+      console.log(cropped_image)
+      // drag(); 
   });
 
   //duplicate of cropping for combine
@@ -1777,6 +1850,7 @@ function touchHandler1(event) {
       //console.log("here");
       $('#crop_image_combine').toggle();
       $('#combine_artbytes').toggle();
+
  
       
   });
